@@ -1,0 +1,2757 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Đỗ Minh Hoàng Phúc | CV · BioSpace · Singularity 2045</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@300;400;600;700;900&family=Share+Tech+Mono&family=Cinzel+Decorative:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════════════════════
+   ROOT VARIABLES — VIETNAMESE LACQUER × QUANTUM SINGULARITY
+   ═══════════════════════════════════════════════════════════ */
+:root {
+  --red-son:       #C0392B;
+  --red-lacquer:   #8B0000;
+  --red-hot:       #FF2D55;
+  --gold-dong:     #D4AF37;
+  --gold-pale:     #F5E6A3;
+  --gold-glow:     rgba(212,175,55,0.35);
+  --cyan-bci:      #00FFD1;
+  --cyan-dim:      #00AA8A;
+  --blue-quantum:  #0080FF;
+  --purple-neural: #9B59B6;
+  --ink-black:     #0A0A0F;
+  --ink-deep:      #0F0F1A;
+  --ink-mid:       #14141F;
+  --ink-surface:   #1A1A28;
+  --ink-panel:     #1E1E30;
+  --ink-border:    rgba(212,175,55,0.2);
+  --text-gold:     #F0D060;
+  --text-pale:     #E8E0D0;
+  --text-dim:      #8A7A6A;
+  --font-display:  'Cinzel Decorative', serif;
+  --font-body:     'Noto Serif Display', serif;
+  --font-mono:     'Share Tech Mono', monospace;
+  --font-tech:     'Rajdhani', sans-serif;
+}
+
+/* ═══════════════════ RESET & BASE ═══════════════════ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--ink-black);
+  color: var(--text-pale);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  cursor: none;
+}
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--ink-deep); }
+::-webkit-scrollbar-thumb { background: var(--gold-dong); border-radius: 2px; }
+
+/* ═══════════════════ CUSTOM CURSOR ═══════════════════ */
+#cursor-main {
+  width: 14px; height: 14px;
+  border: 1.5px solid var(--cyan-bci);
+  border-radius: 50%;
+  position: fixed; pointer-events: none; z-index: 9999;
+  transform: translate(-50%,-50%);
+  transition: width .15s, height .15s, background .15s;
+  mix-blend-mode: screen;
+}
+#cursor-trail {
+  width: 36px; height: 36px;
+  border: 1px solid rgba(212,175,55,0.4);
+  border-radius: 50%;
+  position: fixed; pointer-events: none; z-index: 9998;
+  transform: translate(-50%,-50%);
+  transition: left .08s ease-out, top .08s ease-out;
+  mix-blend-mode: screen;
+}
+body:hover #cursor-main { background: rgba(0,255,209,0.15); }
+
+/* ═══════════════════ PARTICLE CANVAS ═══════════════════ */
+#bg-canvas {
+  position: fixed; top:0; left:0; width:100%; height:100%;
+  z-index: 0; pointer-events: none;
+}
+
+/* ═══════════════════ LAYOUT SHELL ═══════════════════ */
+.page-shell {
+  position: relative; z-index: 1;
+  max-width: 1400px; margin: 0 auto; padding: 0 24px 80px;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   HEADER — RỒNG & LƯỢNG TỬ
+   ═══════════════════════════════════════════════════════════ */
+.cv-header {
+  position: relative;
+  padding: 60px 0 40px;
+  text-align: center;
+  overflow: hidden;
+}
+.cv-header::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(192,57,43,0.18) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 40% at 20% 80%, rgba(0,255,209,0.07) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 50% at 80% 50%, rgba(0,128,255,0.06) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+/* Lotus / Diamond pattern border */
+.header-border-top, .header-border-bot {
+  height: 3px;
+  background: linear-gradient(90deg, transparent 0%, var(--gold-dong) 20%, var(--red-son) 50%, var(--gold-dong) 80%, transparent 100%);
+  margin-bottom: 32px;
+  position: relative;
+}
+.header-border-top::after, .header-border-bot::before {
+  content: '◆';
+  position: absolute; left: 50%; transform: translateX(-50%) translateY(-50%);
+  color: var(--gold-dong);
+  font-size: 12px;
+  background: var(--ink-black);
+  padding: 0 8px;
+}
+
+.header-tag {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 4px;
+  color: var(--cyan-bci);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  animation: fadeUp .8s ease both;
+}
+.cv-name {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 5vw, 52px);
+  font-weight: 900;
+  letter-spacing: 2px;
+  line-height: 1.1;
+  background: linear-gradient(135deg, var(--gold-pale) 0%, var(--gold-dong) 40%, var(--red-son) 70%, var(--red-hot) 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: fadeUp .8s .1s ease both;
+  text-shadow: none;
+}
+.cv-title-line {
+  font-family: var(--font-tech);
+  font-size: clamp(11px, 2vw, 15px);
+  letter-spacing: 3px;
+  color: var(--cyan-dim);
+  margin: 12px 0 8px;
+  animation: fadeUp .8s .2s ease both;
+  text-transform: uppercase;
+}
+.cv-subtitle-quantum {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-dim);
+  letter-spacing: 2px;
+  margin-bottom: 24px;
+  animation: fadeUp .8s .3s ease both;
+}
+
+/* Contact row */
+.contact-row {
+  display: flex; flex-wrap: wrap; gap: 12px;
+  justify-content: center; align-items: center;
+  animation: fadeUp .8s .4s ease both;
+}
+.contact-chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 5px 14px;
+  border: 1px solid var(--ink-border);
+  border-radius: 20px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-gold);
+  background: rgba(212,175,55,0.06);
+  transition: all .25s;
+  cursor: pointer;
+}
+.contact-chip:hover {
+  border-color: var(--gold-dong);
+  background: rgba(212,175,55,0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px var(--gold-glow);
+}
+.contact-chip .chip-icon { font-size: 13px; }
+
+/* ═══════════════════════════════════════════════════════════
+   SEARCH & FILTER COMMAND CENTER
+   ═══════════════════════════════════════════════════════════ */
+.search-center {
+  background: var(--ink-surface);
+  border: 1px solid var(--ink-border);
+  border-radius: 12px;
+  padding: 24px;
+  margin: 32px 0;
+  position: relative;
+  overflow: hidden;
+}
+.search-center::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, var(--red-lacquer), var(--gold-dong), var(--cyan-bci), var(--blue-quantum));
+}
+.search-label {
+  font-family: var(--font-mono);
+  font-size: 10px; letter-spacing: 3px;
+  color: var(--cyan-bci);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+.search-modes {
+  display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px;
+}
+.search-mode-btn {
+  padding: 4px 12px;
+  border: 1px solid rgba(0,255,209,0.2);
+  border-radius: 4px;
+  background: transparent;
+  color: var(--text-dim);
+  font-family: var(--font-mono);
+  font-size: 10px; letter-spacing: 1px;
+  cursor: pointer;
+  transition: all .2s;
+  text-transform: uppercase;
+}
+.search-mode-btn.active, .search-mode-btn:hover {
+  border-color: var(--cyan-bci);
+  color: var(--cyan-bci);
+  background: rgba(0,255,209,0.08);
+}
+.search-input-wrap {
+  position: relative;
+}
+.search-input-wrap::before {
+  content: '⟫';
+  position: absolute; left: 14px; top: 50%; transform: translateY(-50%);
+  color: var(--gold-dong);
+  font-family: var(--font-mono);
+  pointer-events: none;
+}
+#main-search {
+  width: 100%;
+  background: var(--ink-deep);
+  border: 1px solid rgba(212,175,55,0.25);
+  border-radius: 6px;
+  padding: 12px 14px 12px 34px;
+  color: var(--text-pale);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  outline: none;
+  transition: border .2s, box-shadow .2s;
+}
+#main-search:focus {
+  border-color: var(--gold-dong);
+  box-shadow: 0 0 20px rgba(212,175,55,0.15);
+}
+#main-search::placeholder { color: var(--text-dim); }
+
+.filter-tags {
+  display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px;
+}
+.filter-tag {
+  padding: 4px 10px;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  font-family: var(--font-tech);
+  font-size: 11px; letter-spacing: 1px;
+  cursor: pointer;
+  transition: all .2s;
+  text-transform: uppercase;
+}
+.filter-tag[data-cat="edu"]   { border-color: var(--blue-quantum);  color: var(--blue-quantum);  }
+.filter-tag[data-cat="exp"]   { border-color: var(--red-son);       color: var(--red-son);       }
+.filter-tag[data-cat="skill"] { border-color: var(--cyan-bci);      color: var(--cyan-bci);      }
+.filter-tag[data-cat="lang"]  { border-color: var(--gold-dong);     color: var(--gold-dong);     }
+.filter-tag[data-cat="mun"]   { border-color: var(--purple-neural); color: var(--purple-neural); }
+.filter-tag[data-cat="cert"]  { border-color: #27AE60;              color: #27AE60;              }
+.filter-tag[data-cat="sem"]   { border-color: #E67E22;              color: #E67E22;              }
+.filter-tag.active, .filter-tag:hover { opacity: 1; filter: brightness(1.3); background: rgba(255,255,255,0.05); }
+.filter-tag.inactive { opacity: 0.35; }
+
+#search-results-count {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--cyan-bci);
+  margin-top: 10px;
+  min-height: 18px;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   6D INTERACTION PANEL
+   ═══════════════════════════════════════════════════════════ */
+.dim-panel {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 8px;
+  margin: 24px 0;
+}
+@media (max-width: 900px) { .dim-panel { grid-template-columns: repeat(3,1fr); } }
+@media (max-width: 500px) { .dim-panel { grid-template-columns: repeat(2,1fr); } }
+
+.dim-col {
+  background: var(--ink-panel);
+  border: 1px solid var(--ink-border);
+  border-radius: 8px;
+  padding: 12px 8px;
+  display: flex; flex-direction: column; gap: 5px;
+}
+.dim-col-header {
+  font-family: var(--font-mono);
+  font-size: 9px; letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--ink-border);
+}
+.dim-col:nth-child(1) .dim-col-header { color: #FF6B6B; }
+.dim-col:nth-child(2) .dim-col-header { color: #FFD93D; }
+.dim-col:nth-child(3) .dim-col-header { color: var(--cyan-bci); }
+.dim-col:nth-child(4) .dim-col-header { color: var(--purple-neural); }
+.dim-col:nth-child(5) .dim-col-header { color: var(--blue-quantum); }
+.dim-col:nth-child(6) .dim-col-header { color: var(--gold-dong); }
+
+.int-btn {
+  display: block;
+  width: 100%;
+  padding: 5px 6px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid transparent;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 9px; letter-spacing: .5px;
+  color: var(--text-dim);
+  cursor: pointer;
+  text-align: left;
+  transition: all .2s;
+  line-height: 1.3;
+}
+.int-btn:hover { background: rgba(255,255,255,0.08); color: var(--text-pale); border-color: currentColor; }
+.int-btn.active { color: var(--cyan-bci); border-color: var(--cyan-bci); background: rgba(0,255,209,0.08); }
+.int-btn .btn-num { opacity: .4; margin-right: 3px; }
+
+/* ═══════════════════════════════════════════════════════════
+   NAV TABS
+   ═══════════════════════════════════════════════════════════ */
+.nav-tabs {
+  display: flex; flex-wrap: wrap; gap: 4px;
+  margin: 28px 0 20px;
+  border-bottom: 1px solid var(--ink-border);
+  padding-bottom: 0;
+}
+.nav-tab {
+  padding: 8px 18px;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  font-family: var(--font-tech);
+  font-size: 12px; letter-spacing: 2px;
+  color: var(--text-dim);
+  cursor: pointer;
+  transition: all .2s;
+  text-transform: uppercase;
+  margin-bottom: -1px;
+}
+.nav-tab:hover { color: var(--text-pale); }
+.nav-tab.active { color: var(--gold-dong); border-bottom-color: var(--gold-dong); }
+
+/* ═══════════════════════════════════════════════════════════
+   SECTION WRAPPER
+   ═══════════════════════════════════════════════════════════ */
+.cv-section {
+  margin-bottom: 40px;
+  transition: opacity .4s, transform .4s;
+}
+.cv-section.hidden { display: none; }
+.cv-section.filtered { opacity: .15; pointer-events: none; }
+
+.section-header {
+  display: flex; align-items: center; gap: 14px;
+  margin-bottom: 20px;
+}
+.section-icon {
+  width: 32px; height: 32px;
+  display: flex; align-items: center; justify-content: center;
+  border: 1px solid var(--gold-dong);
+  border-radius: 4px;
+  font-size: 16px;
+  flex-shrink: 0;
+  color: var(--gold-dong);
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: 15px; letter-spacing: 2px;
+  color: var(--text-gold);
+  text-transform: uppercase;
+  flex: 1;
+}
+.section-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, var(--gold-dong) 0%, transparent 100%);
+}
+.section-count {
+  font-family: var(--font-mono);
+  font-size: 10px; color: var(--text-dim);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   PROFILE CARD
+   ═══════════════════════════════════════════════════════════ */
+.profile-card {
+  background: var(--ink-surface);
+  border: 1px solid var(--ink-border);
+  border-radius: 10px;
+  padding: 28px;
+  position: relative; overflow: hidden;
+}
+.profile-card::after {
+  content: '◈';
+  position: absolute; right: 20px; bottom: 16px;
+  font-size: 80px;
+  color: rgba(212,175,55,0.05);
+  line-height: 1;
+  pointer-events: none;
+}
+.profile-text {
+  font-size: 14px;
+  line-height: 1.9;
+  color: var(--text-pale);
+}
+.profile-highlight {
+  color: var(--gold-dong);
+  font-weight: 600;
+}
+.profile-quantum {
+  color: var(--cyan-bci);
+}
+
+/* Interest pills */
+.interest-pills {
+  display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px;
+}
+.pill {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-family: var(--font-tech);
+  font-size: 11px; letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.pill-red    { background: rgba(192,57,43,0.2);  border: 1px solid rgba(192,57,43,0.5);  color: #FF6B6B; }
+.pill-gold   { background: rgba(212,175,55,0.12); border: 1px solid rgba(212,175,55,0.4); color: var(--gold-dong); }
+.pill-cyan   { background: rgba(0,255,209,0.08);  border: 1px solid rgba(0,255,209,0.3);  color: var(--cyan-bci); }
+.pill-blue   { background: rgba(0,128,255,0.1);   border: 1px solid rgba(0,128,255,0.35); color: #7EC8FF; }
+.pill-purple { background: rgba(155,89,182,0.12); border: 1px solid rgba(155,89,182,0.4); color: #C39BD3; }
+.pill-green  { background: rgba(39,174,96,0.1);   border: 1px solid rgba(39,174,96,0.35); color: #58D68D; }
+
+/* ═══════════════════════════════════════════════════════════
+   EDUCATION TIMELINE
+   ═══════════════════════════════════════════════════════════ */
+.timeline { position: relative; padding-left: 32px; }
+.timeline::before {
+  content: '';
+  position: absolute; left: 8px; top: 0; bottom: 0; width: 1px;
+  background: linear-gradient(180deg, var(--gold-dong) 0%, var(--cyan-bci) 50%, var(--blue-quantum) 100%);
+}
+.tl-item {
+  position: relative;
+  margin-bottom: 24px;
+  transition: transform .3s;
+}
+.tl-item:hover { transform: translateX(4px); }
+.tl-dot {
+  position: absolute; left: -28px; top: 10px;
+  width: 12px; height: 12px;
+  border: 2px solid var(--gold-dong);
+  border-radius: 50%;
+  background: var(--ink-black);
+  transition: all .3s;
+}
+.tl-item:hover .tl-dot {
+  background: var(--gold-dong);
+  box-shadow: 0 0 12px var(--gold-glow);
+}
+.tl-card {
+  background: var(--ink-surface);
+  border: 1px solid var(--ink-border);
+  border-radius: 8px;
+  padding: 18px 20px;
+  transition: border-color .3s, box-shadow .3s;
+}
+.tl-item:hover .tl-card {
+  border-color: rgba(212,175,55,0.4);
+  box-shadow: 0 4px 24px rgba(212,175,55,0.08);
+}
+.tl-period {
+  font-family: var(--font-mono);
+  font-size: 10px; letter-spacing: 2px;
+  color: var(--cyan-bci);
+  margin-bottom: 6px;
+}
+.tl-institution {
+  font-family: var(--font-tech);
+  font-size: 15px; font-weight: 600; letter-spacing: 1px;
+  color: var(--text-gold);
+  margin-bottom: 2px;
+}
+.tl-degree {
+  font-size: 12px; color: var(--text-pale);
+  margin-bottom: 8px; line-height: 1.5;
+}
+.tl-cgpa {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 2px 10px;
+  border: 1px solid rgba(212,175,55,0.3);
+  border-radius: 3px;
+  font-family: var(--font-mono); font-size: 11px;
+  color: var(--gold-dong);
+  margin-bottom: 10px;
+}
+.tl-courses {
+  font-size: 12px; color: var(--text-dim);
+  line-height: 1.6;
+}
+.tl-courses span { color: var(--text-pale); }
+.tl-badge {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 3px 10px;
+  background: rgba(39,174,96,0.12);
+  border: 1px solid rgba(39,174,96,0.3);
+  border-radius: 3px;
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: 1px;
+  color: #58D68D;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SKILLS MATRIX
+   ═══════════════════════════════════════════════════════════ */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
+.skill-group {
+  background: var(--ink-surface);
+  border: 1px solid var(--ink-border);
+  border-radius: 8px;
+  padding: 16px;
+  transition: all .3s;
+}
+.skill-group:hover {
+  border-color: rgba(0,255,209,0.3);
+  box-shadow: 0 0 20px rgba(0,255,209,0.05);
+}
+.skill-group-title {
+  font-family: var(--font-tech);
+  font-size: 11px; letter-spacing: 2px;
+  color: var(--cyan-bci);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--ink-border);
+}
+.skill-bar-item {
+  margin-bottom: 10px;
+}
+.skill-bar-label {
+  display: flex; justify-content: space-between;
+  font-family: var(--font-tech); font-size: 12px;
+  color: var(--text-pale);
+  margin-bottom: 4px;
+}
+.skill-bar-label span { color: var(--text-dim); font-size: 10px; }
+.skill-bar-bg {
+  height: 4px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.skill-bar-fill {
+  height: 100%;
+  border-radius: 2px;
+  position: relative;
+  transition: width 1.2s cubic-bezier(0.22,1,0.36,1);
+  width: 0%;
+}
+.skill-bar-fill::after {
+  content: '';
+  position: absolute; right: 0; top: 0; bottom: 0; width: 6px;
+  background: white;
+  border-radius: 2px;
+  opacity: .6;
+  box-shadow: 0 0 6px currentColor;
+}
+.fill-cyan   { background: linear-gradient(90deg, var(--cyan-dim), var(--cyan-bci)); color: var(--cyan-bci); }
+.fill-gold   { background: linear-gradient(90deg, #8B6914, var(--gold-dong)); color: var(--gold-dong); }
+.fill-red    { background: linear-gradient(90deg, var(--red-lacquer), var(--red-son)); color: var(--red-son); }
+.fill-blue   { background: linear-gradient(90deg, #004C99, var(--blue-quantum)); color: var(--blue-quantum); }
+.fill-purple { background: linear-gradient(90deg, #6C3483, var(--purple-neural)); color: var(--purple-neural); }
+.fill-green  { background: linear-gradient(90deg, #1A5E38, #27AE60); color: #27AE60; }
+
+/* ═══════════════════════════════════════════════════════════
+   LANGUAGE CARDS
+   ═══════════════════════════════════════════════════════════ */
+.lang-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+}
+.lang-card {
+  background: var(--ink-surface);
+  border: 1px solid var(--ink-border);
+  border-radius: 8px;
+  padding: 20px;
+  transition: all .3s;
+  position: relative; overflow: hidden;
+}
+.lang-card::before {
+  content: '';
+  position: absolute; top:0; left:0; right:0; height:3px;
+}
+.lang-card.vi::before { background: linear-gradient(90deg, var(--red-son), var(--gold-dong)); }
+.lang-card.en::before { background: linear-gradient(90deg, var(--blue-quantum), var(--cyan-bci)); }
+.lang-name {
+  font-family: var(--font-display);
+  font-size: 18px; color: var(--text-gold);
+  margin-bottom: 4px;
+}
+.lang-level {
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: 2px;
+  color: var(--cyan-bci); margin-bottom: 14px;
+  text-transform: uppercase;
+}
+.ielts-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px;
+  margin-bottom: 8px;
+}
+.ielts-cell {
+  background: var(--ink-deep);
+  border: 1px solid var(--ink-border);
+  border-radius: 4px;
+  padding: 8px 4px;
+  text-align: center;
+}
+.ielts-skill { font-family: var(--font-mono); font-size: 9px; color: var(--text-dim); margin-bottom: 3px; }
+.ielts-score {
+  font-family: var(--font-display); font-size: 18px; color: var(--gold-dong);
+}
+.ielts-score.high { color: var(--cyan-bci); }
+.ielts-ref {
+  font-family: var(--font-mono); font-size: 9px; color: var(--text-dim); margin-top: 10px;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   EXPERIENCE & CERTS CARDS
+   ═══════════════════════════════════════════════════════════ */
+.cards-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 14px;
+}
+.info-card {
+  background: var(--ink-surface);
+  border: 1px solid var(--ink-border);
+  border-radius: 8px;
+  padding: 18px;
+  transition: all .3s;
+  position: relative;
+}
+.info-card:hover {
+  border-color: rgba(212,175,55,0.35);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.3);
+}
+.card-icon {
+  font-size: 22px; margin-bottom: 10px;
+}
+.card-title {
+  font-family: var(--font-tech);
+  font-size: 13px; font-weight: 600; letter-spacing: 1px;
+  color: var(--text-gold);
+  margin-bottom: 4px;
+}
+.card-sub {
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: 1px;
+  color: var(--cyan-bci); margin-bottom: 8px;
+  text-transform: uppercase;
+}
+.card-body {
+  font-size: 12px; color: var(--text-dim); line-height: 1.6;
+}
+.card-body strong { color: var(--text-pale); }
+.card-tag {
+  display: inline-block;
+  margin-top: 10px; margin-right: 4px;
+  padding: 2px 8px;
+  border-radius: 3px;
+  font-family: var(--font-mono); font-size: 9px; letter-spacing: 1px;
+  background: rgba(212,175,55,0.1);
+  border: 1px solid rgba(212,175,55,0.25);
+  color: var(--gold-dong);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   MUN / LEADERSHIP TABLE
+   ═══════════════════════════════════════════════════════════ */
+.mun-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--ink-border);
+  border-radius: 8px;
+}
+.mun-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+.mun-table th {
+  background: var(--ink-panel);
+  padding: 10px 14px;
+  text-align: left;
+  font-family: var(--font-mono);
+  font-size: 10px; letter-spacing: 2px;
+  color: var(--gold-dong);
+  border-bottom: 1px solid var(--ink-border);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.mun-table td {
+  padding: 9px 14px;
+  border-bottom: 1px solid rgba(212,175,55,0.07);
+  color: var(--text-pale);
+  line-height: 1.5;
+}
+.mun-table tr:hover td { background: rgba(212,175,55,0.04); }
+.mun-table tr:last-child td { border-bottom: none; }
+.mun-role {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 3px;
+  font-family: var(--font-mono); font-size: 9px;
+  white-space: nowrap;
+}
+.role-chair   { background: rgba(192,57,43,0.2);  border: 1px solid rgba(192,57,43,0.4);  color: #FF6B6B; }
+.role-del     { background: rgba(0,128,255,0.12); border: 1px solid rgba(0,128,255,0.3);  color: #7EC8FF; }
+.role-liaison { background: rgba(39,174,96,0.12); border: 1px solid rgba(39,174,96,0.3);  color: #58D68D; }
+.role-head    { background: rgba(212,175,55,0.12); border: 1px solid rgba(212,175,55,0.3); color: var(--gold-dong); }
+.role-pi      { background: rgba(155,89,182,0.15); border: 1px solid rgba(155,89,182,0.35); color: #C39BD3; }
+
+/* ═══════════════════════════════════════════════════════════
+   SEMINARS
+   ═══════════════════════════════════════════════════════════ */
+.sem-list { display: flex; flex-direction: column; gap: 12px; }
+.sem-item {
+  display: flex; gap: 14px; align-items: flex-start;
+  background: var(--ink-surface);
+  border: 1px solid var(--ink-border);
+  border-radius: 8px; padding: 14px 18px;
+  transition: all .3s;
+}
+.sem-item:hover { border-color: rgba(230,126,34,0.4); transform: translateX(4px); }
+.sem-icon { font-size: 22px; flex-shrink: 0; padding-top: 2px; }
+.sem-body {}
+.sem-date {
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: 2px;
+  color: #E67E22; margin-bottom: 4px;
+}
+.sem-title { font-family: var(--font-tech); font-size: 13px; font-weight: 600; color: var(--text-gold); margin-bottom: 4px; }
+.sem-desc { font-size: 12px; color: var(--text-dim); line-height: 1.6; }
+
+/* ═══════════════════════════════════════════════════════════
+   QUANTUM VISUALIZER (D5)
+   ═══════════════════════════════════════════════════════════ */
+#quantum-viz {
+  display: none;
+  background: var(--ink-deep);
+  border: 1px solid rgba(0,128,255,0.3);
+  border-radius: 8px;
+  padding: 24px;
+  margin: 20px 0;
+  text-align: center;
+}
+#quantum-viz.show { display: block; }
+#quantum-canvas { max-width: 100%; }
+.quantum-label {
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: 2px;
+  color: var(--blue-quantum); margin-bottom: 12px; text-transform: uppercase;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   NEURAL BCI VISUALIZER (D4)
+   ═══════════════════════════════════════════════════════════ */
+#bci-viz {
+  display: none;
+  background: var(--ink-deep);
+  border: 1px solid rgba(155,89,182,0.3);
+  border-radius: 8px;
+  padding: 24px;
+  margin: 20px 0;
+  text-align: center;
+}
+#bci-viz.show { display: block; }
+#bci-canvas { max-width: 100%; }
+
+/* ═══════════════════════════════════════════════════════════
+   TIMELINE SCRUBBER (D2)
+   ═══════════════════════════════════════════════════════════ */
+.timeline-scrubber {
+  display: none;
+  margin: 16px 0;
+  padding: 14px;
+  background: var(--ink-panel);
+  border: 1px solid rgba(255,211,61,0.2);
+  border-radius: 8px;
+}
+.timeline-scrubber.show { display: block; }
+.scrubber-label {
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: 2px;
+  color: #FFD93D; margin-bottom: 10px; text-transform: uppercase;
+}
+#year-scrubber {
+  width: 100%; accent-color: var(--gold-dong);
+  cursor: pointer; height: 4px;
+}
+#year-display {
+  font-family: var(--font-display); font-size: 32px;
+  color: var(--gold-dong); margin-top: 8px; text-align: center;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SINGULARITY METER (D6)
+   ═══════════════════════════════════════════════════════════ */
+.singularity-bar {
+  display: none;
+  margin: 16px 0; padding: 16px;
+  background: var(--ink-panel);
+  border: 1px solid rgba(212,175,55,0.2);
+  border-radius: 8px;
+}
+.singularity-bar.show { display: block; }
+.sing-label {
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: 2px;
+  color: var(--gold-dong); margin-bottom: 10px; text-transform: uppercase;
+}
+.sing-track {
+  height: 20px;
+  background: var(--ink-deep);
+  border-radius: 10px; overflow: hidden;
+  position: relative;
+}
+.sing-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--red-lacquer), var(--gold-dong), var(--cyan-bci), var(--blue-quantum));
+  border-radius: 10px;
+  transition: width 2s cubic-bezier(0.22,1,0.36,1);
+  width: 0%;
+  position: relative;
+}
+.sing-fill::after {
+  content: '▶ SINGULARITY 2045';
+  position: absolute; right: 8px; top: 50%; transform: translateY(-50%);
+  font-family: var(--font-mono); font-size: 8px; letter-spacing: 2px;
+  color: white; white-space: nowrap;
+}
+.sing-milestones {
+  display: flex; justify-content: space-between; margin-top: 6px;
+  font-family: var(--font-mono); font-size: 9px; color: var(--text-dim);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   LOTUS BLOOM EFFECT (D6 — Cultural)
+   ═══════════════════════════════════════════════════════════ */
+.lotus-overlay {
+  display: none;
+  position: fixed; inset: 0;
+  z-index: 5000;
+  pointer-events: none;
+  justify-content: center;
+  align-items: center;
+}
+.lotus-overlay.show { display: flex; }
+.lotus-svg {
+  animation: lotusBloom .8s cubic-bezier(0.34,1.56,0.64,1) forwards;
+  opacity: 0;
+}
+@keyframes lotusBloom {
+  0%   { transform: scale(0) rotate(-90deg); opacity: 0; }
+  60%  { opacity: 1; }
+  100% { transform: scale(1) rotate(0deg); opacity: 0; }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   GENERAL TRANSITIONS & ANIMATIONS
+   ═══════════════════════════════════════════════════════════ */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: .4; }
+}
+@keyframes glitch {
+  0%   { transform: translate(0); }
+  20%  { transform: translate(-2px, 1px); }
+  40%  { transform: translate(2px,-1px); }
+  60%  { transform: translate(-1px, 2px); }
+  80%  { transform: translate(1px,-2px); }
+  100% { transform: translate(0); }
+}
+@keyframes scanline {
+  0%   { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+.glitch-active { animation: glitch .2s steps(1) infinite; }
+
+/* Scanline effect */
+.scanline {
+  position: fixed; top: 0; left: 0; right: 0;
+  height: 2px;
+  background: rgba(0,255,209,0.06);
+  pointer-events: none;
+  animation: scanline 8s linear infinite;
+  z-index: 2;
+}
+
+/* Tilt card effect */
+.tiltable {
+  transition: transform .1s ease-out, box-shadow .1s;
+  transform-style: preserve-3d;
+}
+
+/* Magnetic hover zone */
+.magnetic { transition: transform .3s cubic-bezier(0.23,1,0.32,1); }
+
+/* Matrix rain overlay */
+#matrix-overlay {
+  display: none;
+  position: fixed; inset: 0;
+  z-index: 4000; pointer-events: none;
+}
+#matrix-overlay.show { display: block; }
+
+/* Ghost/phosphor mode */
+body.phosphor-mode {
+  filter: sepia(.2) hue-rotate(140deg);
+}
+body.invert-mode {
+  filter: invert(.9) hue-rotate(180deg);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════════════════════════════ */
+.cv-footer {
+  text-align: center;
+  padding: 32px 0 16px;
+  border-top: 1px solid var(--ink-border);
+  margin-top: 48px;
+}
+.footer-seal {
+  font-family: var(--font-display);
+  font-size: 12px; letter-spacing: 3px;
+  color: var(--text-dim);
+  text-transform: uppercase;
+}
+.footer-seal span { color: var(--gold-dong); }
+.footer-quantum {
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: 2px;
+  color: rgba(0,255,209,0.3); margin-top: 6px;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   TOOLTIP
+   ═══════════════════════════════════════════════════════════ */
+[data-tooltip] { position: relative; }
+[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute; bottom: calc(100% + 8px); left: 50%; transform: translateX(-50%);
+  background: var(--ink-panel);
+  border: 1px solid var(--gold-dong);
+  color: var(--text-pale);
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: 1px;
+  padding: 4px 10px; border-radius: 4px;
+  white-space: nowrap; pointer-events: none;
+  opacity: 0; transition: opacity .2s;
+  z-index: 100;
+}
+[data-tooltip]:hover::after { opacity: 1; }
+
+/* ══ HIGHLIGHT ══ */
+.highlight-match {
+  background: rgba(212,175,55,0.3);
+  border-radius: 2px;
+  padding: 0 2px;
+}
+</style>
+</head>
+<body>
+
+<!-- CURSOR -->
+<div id="cursor-main"></div>
+<div id="cursor-trail"></div>
+
+<!-- SCANLINE -->
+<div class="scanline"></div>
+
+<!-- BACKGROUND CANVAS -->
+<canvas id="bg-canvas"></canvas>
+
+<!-- MATRIX OVERLAY -->
+<canvas id="matrix-overlay"></canvas>
+
+<!-- LOTUS OVERLAY -->
+<div class="lotus-overlay" id="lotus-overlay">
+  <svg class="lotus-svg" width="300" height="300" viewBox="0 0 300 300">
+    <g transform="translate(150,150)">
+      <circle r="20" fill="none" stroke="#D4AF37" stroke-width="1" opacity=".5"/>
+      <circle r="40" fill="none" stroke="#C0392B" stroke-width=".5" opacity=".4"/>
+      <circle r="80" fill="none" stroke="#D4AF37" stroke-width=".5" opacity=".3"/>
+      <!-- Lotus petals -->
+      <g id="petals">
+        <ellipse rx="18" ry="50" fill="rgba(192,57,43,0.5)" transform="rotate(0) translate(0,-30)" rx="15"/>
+        <ellipse rx="15" ry="50" fill="rgba(192,57,43,0.45)" transform="rotate(45) translate(0,-30)"/>
+        <ellipse rx="15" ry="50" fill="rgba(212,175,55,0.4)" transform="rotate(90) translate(0,-30)"/>
+        <ellipse rx="15" ry="50" fill="rgba(192,57,43,0.45)" transform="rotate(135) translate(0,-30)"/>
+        <ellipse rx="15" ry="50" fill="rgba(192,57,43,0.5)" transform="rotate(180) translate(0,-30)"/>
+        <ellipse rx="15" ry="50" fill="rgba(192,57,43,0.45)" transform="rotate(225) translate(0,-30)"/>
+        <ellipse rx="15" ry="50" fill="rgba(212,175,55,0.4)" transform="rotate(270) translate(0,-30)"/>
+        <ellipse rx="15" ry="50" fill="rgba(192,57,43,0.45)" transform="rotate(315) translate(0,-30)"/>
+      </g>
+      <circle r="15" fill="#D4AF37" opacity=".8"/>
+      <circle r="6" fill="#F5E6A3"/>
+    </g>
+  </svg>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<div class="page-shell">
+
+<!-- ══════════════ HEADER ══════════════ -->
+<header class="cv-header">
+  <div class="header-border-top"></div>
+  <div class="header-tag">◈ CURRICULUM VITAE · HỒ SƠ HỌC THUẬT & NGHỀ NGHIỆP · SINGULARITY 2045 ◈</div>
+  <h1 class="cv-name">ĐỖ MINH HOÀNG PHÚC</h1>
+  <div class="cv-title-line">Space Engineering · BCI · Post-Quantum · International Relations</div>
+  <div class="cv-subtitle-quantum">
+    [ IU-VNUHCM · HUFLIT · BioSpace Quantum Sensor System · Mekong-Silicon Nexus ]
+  </div>
+  <div class="contact-row">
+    <div class="contact-chip" data-tooltip="Sao chép Email" onclick="copyText('hgphuc161203vn.work@gmail.com')">
+      <span class="chip-icon">✉</span> hgphuc161203vn.work@gmail.com
+    </div>
+    <div class="contact-chip" data-tooltip="Sao chép SĐT" onclick="copyText('0767883859')">
+      <span class="chip-icon">📱</span> 0767883859 / 0348327640
+    </div>
+    <div class="contact-chip" data-tooltip="Địa chỉ">
+      <span class="chip-icon">📍</span> Hồ Chí Minh City, Việt Nam
+    </div>
+    <div class="contact-chip" data-tooltip="IELTS 7.0">
+      <span class="chip-icon">🌐</span> IELTS Overall 7.0
+    </div>
+  </div>
+  <div class="header-border-bot" style="margin-top:28px; margin-bottom:0;"></div>
+</header>
+
+<!-- ══════════════ SEARCH CENTER ══════════════ -->
+<div class="search-center" id="search-center">
+  <div class="search-label">⟫ TRUNG TÂM TRA CỨU ĐA CHIỀU — MULTI-DIMENSIONAL SEARCH</div>
+  <div class="search-modes">
+    <button class="search-mode-btn active" onclick="setSearchMode('full')" id="mode-full">🔍 Toàn văn</button>
+    <button class="search-mode-btn" onclick="setSearchMode('exact')" id="mode-exact">⟦⟧ Chính xác</button>
+    <button class="search-mode-btn" onclick="setSearchMode('fuzzy')" id="mode-fuzzy">≈ Gần đúng</button>
+    <button class="search-mode-btn" onclick="setSearchMode('quantum')" id="mode-quantum">⊕ Quantum</button>
+    <button class="search-mode-btn" onclick="setSearchMode('year')" id="mode-year">📅 Theo năm</button>
+    <button class="search-mode-btn" onclick="setSearchMode('role')" id="mode-role">🎭 Theo vai trò</button>
+  </div>
+  <div class="search-input-wrap">
+    <input type="text" id="main-search" placeholder="Nhập từ khóa tra cứu — Type to search across all CV dimensions..." autocomplete="off">
+  </div>
+  <div class="filter-tags">
+    <button class="filter-tag" data-cat="all" onclick="filterCat('all')">◎ Tất cả</button>
+    <button class="filter-tag" data-cat="edu" onclick="filterCat('edu')">🎓 Học vấn</button>
+    <button class="filter-tag" data-cat="exp" onclick="filterCat('exp')">💼 Kinh nghiệm</button>
+    <button class="filter-tag" data-cat="skill" onclick="filterCat('skill')">⚡ Kỹ năng</button>
+    <button class="filter-tag" data-cat="lang" onclick="filterCat('lang')">🌐 Ngôn ngữ</button>
+    <button class="filter-tag" data-cat="mun" onclick="filterCat('mun')">🏛 MUN/Lãnh đạo</button>
+    <button class="filter-tag" data-cat="cert" onclick="filterCat('cert')">📜 Chứng chỉ</button>
+    <button class="filter-tag" data-cat="sem" onclick="filterCat('sem')">🔬 Hội thảo</button>
+  </div>
+  <div id="search-results-count"></div>
+</div>
+
+<!-- ══════════════ 6D INTERACTION PANEL ══════════════ -->
+<div class="dim-panel" id="dim-panel">
+
+  <!-- D1 — SPATIAL -->
+  <div class="dim-col">
+    <div class="dim-col-header">D1 · Không gian</div>
+    <button class="int-btn" id="btn-1" onclick="int_3DTilt()"><span class="btn-num">①</span>3D Tilt Cards</button>
+    <button class="int-btn" id="btn-2" onclick="int_Parallax()"><span class="btn-num">②</span>Parallax Depth</button>
+    <button class="int-btn" id="btn-3" onclick="int_Depth()"><span class="btn-num">③</span>Z-Depth Scroll</button>
+    <button class="int-btn" id="btn-4" onclick="int_Magnetic()"><span class="btn-num">④</span>Magnetic Hover</button>
+    <button class="int-btn" id="btn-5" onclick="int_Float()"><span class="btn-num">⑤</span>Float Levitate</button>
+    <button class="int-btn" id="btn-6" onclick="int_Gravity()"><span class="btn-num">⑥</span>Gravity Collapse</button>
+  </div>
+
+  <!-- D2 — TEMPORAL -->
+  <div class="dim-col">
+    <div class="dim-col-header">D2 · Thời gian</div>
+    <button class="int-btn" id="btn-7" onclick="int_TimeScrub()"><span class="btn-num">⑦</span>Timeline Scrub</button>
+    <button class="int-btn" id="btn-8" onclick="int_FadeReveal()"><span class="btn-num">⑧</span>Fade Reveal</button>
+    <button class="int-btn" id="btn-9" onclick="int_Typewriter()"><span class="btn-num">⑨</span>Typewriter</button>
+    <button class="int-btn" id="btn-10" onclick="int_Countdown()"><span class="btn-num">⑩</span>2045 Countdown</button>
+    <button class="int-btn" id="btn-11" onclick="int_Pulse()"><span class="btn-num">⑪</span>Bio Pulse</button>
+    <button class="int-btn" id="btn-12" onclick="int_ChronoFilter()"><span class="btn-num">⑫</span>Chrono Filter</button>
+  </div>
+
+  <!-- D3 — DATA -->
+  <div class="dim-col">
+    <div class="dim-col-header">D3 · Dữ liệu</div>
+    <button class="int-btn" id="btn-13" onclick="int_SkillRadar()"><span class="btn-num">⑬</span>Skill Radar</button>
+    <button class="int-btn" id="btn-14" onclick="int_TagCloud()"><span class="btn-num">⑭</span>Tag Cloud</button>
+    <button class="int-btn" id="btn-15" onclick="int_Sort()"><span class="btn-num">⑮</span>Smart Sort</button>
+    <button class="int-btn" id="btn-16" onclick="int_Compare()"><span class="btn-num">⑯</span>Compare Mode</button>
+    <button class="int-btn" id="btn-17" onclick="int_Stats()"><span class="btn-num">⑰</span>Stats Dashboard</button>
+    <button class="int-btn" id="btn-18" onclick="int_Export()"><span class="btn-num">⑱</span>Export Data</button>
+  </div>
+
+  <!-- D4 — NEURAL/BCI -->
+  <div class="dim-col">
+    <div class="dim-col-header">D4 · Neural BCI</div>
+    <button class="int-btn" id="btn-19" onclick="int_BrainViz()"><span class="btn-num">⑲</span>BCI Visualizer</button>
+    <button class="int-btn" id="btn-20" onclick="int_NeuralNet()"><span class="btn-num">⑳</span>Neural Network</button>
+    <button class="int-btn" id="btn-21" onclick="int_Synapse()"><span class="btn-num">㉑</span>Synapse Click</button>
+    <button class="int-btn" id="btn-22" onclick="int_EEG()"><span class="btn-num">㉒</span>EEG Pattern</button>
+    <button class="int-btn" id="btn-23" onclick="int_Coherence()"><span class="btn-num">㉓</span>Coherence Meter</button>
+    <button class="int-btn" id="btn-24" onclick="int_Projection()"><span class="btn-num">㉔</span>Thought Project</button>
+  </div>
+
+  <!-- D5 — QUANTUM -->
+  <div class="dim-col">
+    <div class="dim-col-header">D5 · Lượng tử</div>
+    <button class="int-btn" id="btn-25" onclick="int_Superposition()"><span class="btn-num">㉕</span>Superposition</button>
+    <button class="int-btn" id="btn-26" onclick="int_Entangle()"><span class="btn-num">㉖</span>Entanglement</button>
+    <button class="int-btn" id="btn-27" onclick="int_Collapse()"><span class="btn-num">㉗</span>Wave Collapse</button>
+    <button class="int-btn" id="btn-28" onclick="int_Tunnel()"><span class="btn-num">㉘</span>Tunneling FX</button>
+    <button class="int-btn" id="btn-29" onclick="int_QuantumViz()"><span class="btn-num">㉙</span>Quantum Viz</button>
+    <button class="int-btn" id="btn-30" onclick="int_Decohere()"><span class="btn-num">㉚</span>Decoherence</button>
+  </div>
+
+  <!-- D6 — CULTURAL -->
+  <div class="dim-col">
+    <div class="dim-col-header">D6 · Văn hóa</div>
+    <button class="int-btn" id="btn-31" onclick="int_Lotus()"><span class="btn-num">㉛</span>Lotus Bloom</button>
+    <button class="int-btn" id="btn-32" onclick="int_Dragon()"><span class="btn-num">㉜</span>Dragon Scroll</button>
+    <button class="int-btn" id="btn-33" onclick="int_InkBrush()"><span class="btn-num">㉝</span>Ink Brush</button>
+    <button class="int-btn" id="btn-34" onclick="int_Singularity()"><span class="btn-num">㉞</span>Singularity Bar</button>
+    <button class="int-btn" id="btn-35" onclick="int_Matrix()"><span class="btn-num">㉟</span>Matrix Rain</button>
+    <button class="int-btn" id="btn-36" onclick="int_Phosphor()"><span class="btn-num">㊱</span>Phosphor Mode</button>
+  </div>
+
+</div>
+
+<!-- DYNAMIC WIDGETS -->
+<div class="timeline-scrubber" id="time-scrubber">
+  <div class="scrubber-label">⟫ TIMELINE SCRUBBER — Lọc theo năm</div>
+  <input type="range" id="year-scrubber" min="2018" max="2029" value="2026" oninput="scrubYear(this.value)">
+  <div id="year-display">2026</div>
+  <div style="font-family:var(--font-mono);font-size:10px;color:var(--text-dim);margin-top:6px;" id="year-events">Tất cả sự kiện đang hiển thị</div>
+</div>
+
+<div class="singularity-bar" id="sing-bar">
+  <div class="sing-label">⟫ SINGULARITY 2045 — Hành trình tiến hoá</div>
+  <div class="sing-track"><div class="sing-fill" id="sing-fill"></div></div>
+  <div class="sing-milestones">
+    <span>2021</span><span>2024</span><span>2026<br>◆ NOW</span><span>2030</span><span>2035</span><span>2040</span><span>2045</span>
+  </div>
+</div>
+
+<div id="quantum-viz">
+  <div class="quantum-label">⊕ QUANTUM STATE VISUALIZER</div>
+  <canvas id="quantum-canvas" width="600" height="200"></canvas>
+</div>
+
+<div id="bci-viz">
+  <div class="quantum-label" style="color:var(--purple-neural);">⟴ BCI NEURAL INTERFACE</div>
+  <canvas id="bci-canvas" width="600" height="200"></canvas>
+</div>
+
+<!-- ══════════════ NAV TABS ══════════════ -->
+<nav class="nav-tabs" id="nav-tabs">
+  <button class="nav-tab active" onclick="showTab('profile')">👤 Hồ sơ</button>
+  <button class="nav-tab" onclick="showTab('education')">🎓 Học vấn</button>
+  <button class="nav-tab" onclick="showTab('experience')">💼 Kinh nghiệm</button>
+  <button class="nav-tab" onclick="showTab('skills')">⚡ Kỹ năng</button>
+  <button class="nav-tab" onclick="showTab('languages')">🌐 Ngôn ngữ</button>
+  <button class="nav-tab" onclick="showTab('leadership')">🏛 Lãnh đạo</button>
+  <button class="nav-tab" onclick="showTab('seminars')">🔬 Hội thảo</button>
+  <button class="nav-tab" onclick="showTab('all')">◈ Tất cả</button>
+</nav>
+
+<!-- ══════════════════════════════════════════════════════
+     SECTION: PROFESSIONAL PROFILE
+     ══════════════════════════════════════════════════════ -->
+<section class="cv-section" id="sec-profile" data-cat="profile">
+  <div class="section-header">
+    <div class="section-icon">👤</div>
+    <h2 class="section-title">Hồ Sơ Chuyên Môn</h2>
+    <div class="section-line"></div>
+    <div class="section-count">Professional Profile</div>
+  </div>
+  <div class="profile-card tiltable searchable" id="profile-card">
+    <p class="profile-text">
+      Sinh viên đại học <span class="profile-highlight">ngành Kỹ thuật Vũ trụ</span> tại
+      <span class="profile-highlight">International University, VNU-HCM</span>,
+      với nền tảng học thuật trước đó tại HUFLIT về
+      <span class="profile-highlight">Quan hệ Quốc tế & Ngoại giao Đa phương</span>.<br><br>
+      Định hướng nghiên cứu dài hạn tập trung vào
+      <span class="profile-quantum">BioSpace Quantum Sensor System</span> —
+      nền tảng chip bán dẫn tích hợp vận hành đồng thời trong môi trường đẩy tên lửa và hệ thống thần kinh mạch máu,
+      với ứng dụng trong <span class="profile-quantum">BCI hậu lượng tử</span> và
+      <span class="profile-quantum">an ninh mạng sau lượng tử</span>.<br><br>
+      Tầm nhìn chiến lược hướng đến khung <span class="profile-highlight">Singularity 2045</span>,
+      phát triển quốc gia Việt Nam và kết nối Mekong-Silicon.
+    </p>
+    <div class="interest-pills">
+      <span class="pill pill-red">Space Engineering</span>
+      <span class="pill pill-cyan">BCI</span>
+      <span class="pill pill-blue">Post-Quantum</span>
+      <span class="pill pill-gold">International Relations</span>
+      <span class="pill pill-purple">Neural Interface</span>
+      <span class="pill pill-green">Earth Observation</span>
+      <span class="pill pill-red">Cybersecurity</span>
+      <span class="pill pill-gold">Python / Django</span>
+      <span class="pill pill-cyan">Network Infrastructure</span>
+      <span class="pill pill-blue">Semiconductor</span>
+      <span class="pill pill-purple">Science Communication</span>
+      <span class="pill pill-green">MUN Leadership</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     SECTION: EDUCATION
+     ══════════════════════════════════════════════════════ -->
+<section class="cv-section" id="sec-education" data-cat="edu">
+  <div class="section-header">
+    <div class="section-icon">🎓</div>
+    <h2 class="section-title">Học Vấn & Đào Tạo</h2>
+    <div class="section-line"></div>
+    <div class="section-count">Education</div>
+  </div>
+  <div class="timeline">
+
+    <div class="tl-item searchable" data-year="2024" data-tags="space engineering physics IU VNUHCM vat ly ky thuat vu tru">
+      <div class="tl-dot"></div>
+      <div class="tl-card">
+        <div class="tl-period">⟫ AUG 2024 — AUG 2029 · HIỆN TẠI</div>
+        <div class="tl-institution">International University — VNU-HCM</div>
+        <div class="tl-degree">
+          Khoa Vật lý · Chuyên ngành: <strong>Kỹ thuật Vũ trụ (Space Engineering)</strong><br>
+          CGPA: 2.35 / 4.0
+        </div>
+        <div class="tl-cgpa">⟦ CGPA 2.35 ⟧</div>
+        <div class="tl-courses">
+          Các môn nổi bật: <span>Earth Observation and the Environment</span>
+        </div>
+        <div class="tl-badge">🚀 ACTIVE — Dự kiến tốt nghiệp 2029</div>
+      </div>
+    </div>
+
+    <div class="tl-item searchable" data-year="2021" data-tags="international relations multilateral diplomacy HUFLIT quan he quoc te ngoai giao da phuong">
+      <div class="tl-dot"></div>
+      <div class="tl-card">
+        <div class="tl-period">⟫ AUG 2021 — AUG 2024 · ĐÃ TỐT NGHIỆP</div>
+        <div class="tl-institution">HUFLIT — ĐH Ngoại ngữ - Tin học TP.HCM</div>
+        <div class="tl-degree">
+          Chuyên ngành: <strong>Quan hệ Quốc tế</strong> · Định hướng: <strong>Ngoại giao Đa phương</strong><br>
+          CGPA: 3.61 / 4.0
+        </div>
+        <div class="tl-cgpa">⟦ CGPA 3.61 ⟧</div>
+        <div class="tl-courses">
+          Các môn nổi bật: <span>Research Methodology · News Writing &amp; Editing · U.S. Foreign Policy · Chinese Foreign Policy · English Debating Skills · History of International Relations · History of World Civilisation</span>
+        </div>
+        <div class="tl-badge">✅ Công trình nghiên cứu — "Soft Power Hàn Quốc tại ĐNA trong đại dịch COVID-19" · Xếp loại: Tốt · Số 912/QĐ-ĐNT, 17/07/2023</div>
+      </div>
+    </div>
+
+    <div class="tl-item searchable" data-year="2018" data-tags="high school THPT Nguyen Cong Tru Hanh Thong Tay">
+      <div class="tl-dot"></div>
+      <div class="tl-card">
+        <div class="tl-period">⟫ 2018 — 2021</div>
+        <div class="tl-institution">THPT Nguyễn Công Trứ — Phường Hạnh Thông Tây, TP.HCM</div>
+        <div class="tl-degree">
+          Giáo dục Trung học Phổ thông · CGPA: 7.97
+        </div>
+        <div class="tl-cgpa">⟦ CGPA 7.97 ⟧</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     SECTION: PROFESSIONAL EXPERIENCE
+     ══════════════════════════════════════════════════════ -->
+<section class="cv-section" id="sec-experience" data-cat="exp">
+  <div class="section-header">
+    <div class="section-icon">💼</div>
+    <h2 class="section-title">Kinh Nghiệm Chuyên Môn</h2>
+    <div class="section-line"></div>
+    <div class="section-count">Professional Experience</div>
+  </div>
+  <div class="cards-grid">
+
+    <div class="info-card searchable tiltable" data-tags="teaching assistant VUS english education giao vien tieng anh">
+      <div class="card-icon">📚</div>
+      <div class="card-title">Teaching Assistant</div>
+      <div class="card-sub">DEC 2025 — MAY 2026 · HIỆN TẠI</div>
+      <div class="card-body">
+        <strong>Viet Nam USA Society English Centers (VUS)</strong><br>
+        Hỗ trợ các hoạt động học tiếng Anh và vận hành lớp học trong môi trường giáo dục chuyên nghiệp.
+        Hỗ trợ gắn kết người học, giao tiếp và hỗ trợ học thuật.
+      </div>
+      <span class="card-tag">Education</span>
+      <span class="card-tag">English</span>
+      <span class="card-tag">Communication</span>
+    </div>
+
+    <div class="info-card searchable tiltable" data-tags="principal investigator research soft power Korea Southeast Asia COVID nghien cuu">
+      <div class="card-icon">🔬</div>
+      <div class="card-title">Principal Investigator — Research</div>
+      <div class="card-sub">2023 · NGHIÊN CỨU ĐẠI HỌC</div>
+      <div class="card-body">
+        <strong>"South Korea's Soft Power in Southeast Asia in the Context of the COVID-19 Pandemic"</strong><br>
+        Thực hiện nghiên cứu đại học về quan hệ quốc tế, ngoại giao công chúng, nghiên cứu khu vực và phân tích sức mạnh mềm.
+        <br>Xếp loại: <strong>Tốt</strong> · Số 912/QĐ-ĐNT, 17/07/2023
+      </div>
+      <span class="card-tag">Research</span>
+      <span class="card-tag">IR</span>
+      <span class="card-tag">Soft Power</span>
+      <span class="card-tag">COVID-19</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     SECTION: TECHNICAL SKILLS & CERTS
+     ══════════════════════════════════════════════════════ -->
+<section class="cv-section" id="sec-skills" data-cat="skill">
+  <div class="section-header">
+    <div class="section-icon">⚡</div>
+    <h2 class="section-title">Kỹ Năng & Chứng Chỉ Kỹ Thuật</h2>
+    <div class="section-line"></div>
+    <div class="section-count">Skills & Certifications</div>
+  </div>
+
+  <div class="skills-grid" id="skills-grid">
+
+    <div class="skill-group searchable" data-tags="python programming django pandas bootstrap web scraping">
+      <div class="skill-group-title">Python & Web Development</div>
+      <div class="skill-bar-item">
+        <div class="skill-bar-label">Python Fundamentals <span>BK-CCE 2024</span></div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill fill-cyan" data-pct="85"></div></div>
+      </div>
+      <div class="skill-bar-item">
+        <div class="skill-bar-label">Python Advanced <span>BK-CCE 2024</span></div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill fill-cyan" data-pct="75"></div></div>
+      </div>
+      <div class="skill-bar-item">
+        <div class="skill-bar-label">Django / MTV Framework <span>VNU-HCM 2025</span></div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill fill-blue" data-pct="70"></div></div>
+      </div>
+      <div class="skill-bar-item">
+        <div class="skill-bar-label">Pandas / Data Analysis <span>VNU-HCM 2025</span></div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill fill-green" data-pct="68"></div></div>
+      </div>
+      <div class="skill-bar-item">
+        <div class="skill-bar-label">Bootstrap / Web Scraping <span>VNU-HCM 2025</span></div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill fill-purple" data-pct="65"></div></div>
+      </div>
+    </div>
+
+    <div class="skill-group searchable" data-tags="network security infrastructure administration cybersecurity mang bao mat">
+      <div class="skill-group-title">Cybersecurity & Networks</div>
+      <div class="skill-bar-item">
+        <div class="skill-bar-label">Network Security <span>VNU-HCM 2025</span></div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill fill-red" data-pct="72"></div></div>
+      </div>
+      <div class="skill-bar-item">
+        <div class="skill-bar-label">Network Infrastructure Admin <span>VNU-HCM 2025</span></div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill fill-red" data-pct="68"></div></div>
+      </div>
+      <div class="skill-bar-item">
+        <div class="skill-bar-label">Cybersecurity Fundamentals</div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill fill-gold" data-pct="65"></div></div>
+      </div>
+    </div>
+
+    <div class="skill-group searchable" data-tags="research writing international relations analysis diplomacy nghien cuu viet">
+      <div class="skill-group-title">Research & Academic</div>
+      <div class="skill-bar-item">
+        <div class="skill-bar-label">Academic Research & Literature Review</div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill fill-gold" data-pct="88"></div></div>
+      </div>
+      <div class="skill-bar-item">
+        <div class="skill-bar-label">International Relations Analysis</div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill fill-gold" data-pct="85"></div></div>
+      </div>
+      <div class="skill-bar-item">
+        <div class="skill-bar-label">Science Communication</div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill fill-cyan" data-pct="78"></div></div>
+      </div>
+      <div class="skill-bar-item">
+        <div class="skill-bar-label">News Writing & Editing</div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill fill-blue" data-pct="75"></div></div>
+      </div>
+    </div>
+
+    <div class="skill-group searchable" data-tags="public relations MUN Model United Nations leadership liaison team communication">
+      <div class="skill-group-title">Leadership & Communication</div>
+      <div class="skill-bar-item">
+        <div class="skill-bar-label">MUN Chairing & Facilitation</div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill fill-purple" data-pct="90"></div></div>
+      </div>
+      <div class="skill-bar-item">
+        <div class="skill-bar-label">Public Relations</div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill fill-purple" data-pct="82"></div></div>
+      </div>
+      <div class="skill-bar-item">
+        <div class="skill-bar-label">Liaison Coordination</div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill fill-green" data-pct="80"></div></div>
+      </div>
+      <div class="skill-bar-item">
+        <div class="skill-bar-label">English Debate</div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill fill-cyan" data-pct="78"></div></div>
+      </div>
+    </div>
+
+    <div class="skill-group searchable" data-tags="space engineering earth observation physics ky thuat vu tru vat ly">
+      <div class="skill-group-title">Space & Physics</div>
+      <div class="skill-bar-item">
+        <div class="skill-bar-label">Earth Observation</div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill fill-blue" data-pct="60"></div></div>
+      </div>
+      <div class="skill-bar-item">
+        <div class="skill-bar-label">Space Engineering Fundamentals</div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill fill-blue" data-pct="55"></div></div>
+      </div>
+      <div class="skill-bar-item">
+        <div class="skill-bar-label">Quantum Physics Orientation</div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill fill-cyan" data-pct="50"></div></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Certs -->
+  <div style="margin-top:24px;">
+    <div class="section-header" style="margin-bottom:14px;">
+      <div class="section-icon" style="width:24px;height:24px;font-size:13px;">📜</div>
+      <h3 class="section-title" style="font-size:12px;">Chứng Chỉ Đã Cấp</h3>
+      <div class="section-line"></div>
+    </div>
+    <div class="cards-grid" id="cert-grid">
+      <div class="info-card searchable" data-cat="cert" data-tags="python fundamentals BK CCE Bachkhoa certificate chung chi">
+        <div class="card-icon">🐍</div>
+        <div class="card-title">Python Programming — Fundamentals</div>
+        <div class="card-sub">11/07/2024 · CN0343/24/BK-CCE</div>
+        <div class="card-body">Trung tâm Kỹ thuật Máy tính, ĐH Bách Khoa TP.HCM</div>
+        <span class="card-tag">Python</span><span class="card-tag">Fundamentals</span>
+      </div>
+      <div class="info-card searchable" data-cat="cert" data-tags="python advanced BK CCE Bachkhoa certificate chung chi nang cao">
+        <div class="card-icon">🐍</div>
+        <div class="card-title">Python Programming — Advanced</div>
+        <div class="card-sub">12/08/2024 · CN0411/24/BK-CCE</div>
+        <div class="card-body">Trung tâm Kỹ thuật Máy tính, ĐH Bách Khoa TP.HCM</div>
+        <span class="card-tag">Python</span><span class="card-tag">Advanced</span>
+      </div>
+      <div class="info-card searchable" data-cat="cert" data-tags="python django bootstrap pandas web scraping CSC VNU-HCM khoa hoc may tinh">
+        <div class="card-icon">🌐</div>
+        <div class="card-title">Python · Django · Pandas · Bootstrap · Web Scraping</div>
+        <div class="card-sub">18/06/2025 · Code: 1402508 · verify.csc.edu.vn</div>
+        <div class="card-body">Trung tâm Khoa học Máy tính, ĐH Khoa học VNU-HCM</div>
+        <span class="card-tag">Django</span><span class="card-tag">Pandas</span><span class="card-tag">Bootstrap</span>
+      </div>
+      <div class="info-card searchable" data-cat="cert" data-tags="network security bao mat mang CSC VNU-HCM">
+        <div class="card-icon">🔐</div>
+        <div class="card-title">Network Security</div>
+        <div class="card-sub">22/08/2025 · Code: 1424731 · verify.csc.edu.vn</div>
+        <div class="card-body">Trung tâm Khoa học Máy tính, ĐH Khoa học VNU-HCM</div>
+        <span class="card-tag">Security</span><span class="card-tag">Network</span>
+      </div>
+      <div class="info-card searchable" data-cat="cert" data-tags="network infrastructure administration quan tri ha tang mang CSC VNU-HCM">
+        <div class="card-icon">🖧</div>
+        <div class="card-title">Network Infrastructure Administration</div>
+        <div class="card-sub">01/10/2025 · Code: 1429465 · verify.csc.edu.vn</div>
+        <div class="card-body">Trung tâm Khoa học Máy tính, ĐH Khoa học VNU-HCM</div>
+        <span class="card-tag">Infrastructure</span><span class="card-tag">Admin</span>
+      </div>
+      <div class="info-card searchable" data-cat="cert" data-tags="B2 driving licence bang lai xe Hoang Gia">
+        <div class="card-icon">🚗</div>
+        <div class="card-title">Bằng Lái Xe Hạng B2</div>
+        <div class="card-sub">Hiệu lực đến 12/08/2030</div>
+        <div class="card-body">Trung tâm Đào tạo & Sát hạch Lái xe Hoàng Gia</div>
+        <span class="card-tag">B2 Licence</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     SECTION: LANGUAGES
+     ══════════════════════════════════════════════════════ -->
+<section class="cv-section" id="sec-languages" data-cat="lang">
+  <div class="section-header">
+    <div class="section-icon">🌐</div>
+    <h2 class="section-title">Ngôn Ngữ</h2>
+    <div class="section-line"></div>
+    <div class="section-count">Languages</div>
+  </div>
+  <div class="lang-grid">
+
+    <div class="lang-card vi searchable" data-tags="tieng viet Vietnamese native proficiency ban ngu">
+      <div class="lang-name">Tiếng Việt</div>
+      <div class="lang-level">NATIVE PROFICIENCY — BẢN NGỮ</div>
+      <div class="skill-bar-bg" style="height:6px; border-radius:3px;">
+        <div class="skill-bar-fill fill-red" data-pct="100" style="height:6px;"></div>
+      </div>
+      <p style="font-family:var(--font-mono);font-size:11px;color:var(--text-dim);margin-top:10px;">
+        Ngôn ngữ mẹ đẻ — Thành thạo toàn diện: đọc, viết, nghe, nói, học thuật & chuyên môn.
+      </p>
+    </div>
+
+    <div class="lang-card en searchable" data-tags="IELTS English academic 7.0 listening reading writing speaking tieng anh">
+      <div class="lang-name">English</div>
+      <div class="lang-level">IELTS ACADEMIC — OVERALL 7.0</div>
+      <div class="ielts-grid">
+        <div class="ielts-cell">
+          <div class="ielts-skill">Listening</div>
+          <div class="ielts-score high">8.0</div>
+        </div>
+        <div class="ielts-cell">
+          <div class="ielts-skill">Reading</div>
+          <div class="ielts-score high">7.5</div>
+        </div>
+        <div class="ielts-cell">
+          <div class="ielts-skill">Writing</div>
+          <div class="ielts-score">6.5</div>
+        </div>
+        <div class="ielts-cell">
+          <div class="ielts-skill">Speaking</div>
+          <div class="ielts-score">6.0</div>
+        </div>
+      </div>
+      <div class="ielts-ref">
+        Test 1: No. 23VN006325DOM101A · 21/05/2023<br>
+        Test 2: No. 20VN011989DOM028A · 21/11/2020 (L:8.0, R:7.5, W:6.0, S:6.0)
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     SECTION: LEADERSHIP & MUN
+     ══════════════════════════════════════════════════════ -->
+<section class="cv-section" id="sec-leadership" data-cat="mun">
+  <div class="section-header">
+    <div class="section-icon">🏛</div>
+    <h2 class="section-title">Lãnh Đạo, Hoạt Động Xã Hội & MUN</h2>
+    <div class="section-line"></div>
+    <div class="section-count">Leadership & MUN</div>
+  </div>
+
+  <div class="mun-table-wrap">
+    <table class="mun-table" id="mun-table">
+      <thead>
+        <tr>
+          <th>Năm</th>
+          <th>Sự kiện / Tổ chức</th>
+          <th>Vai trò</th>
+          <th>Uỷ ban / Chủ đề</th>
+        </tr>
+      </thead>
+      <tbody id="mun-tbody">
+        <tr class="searchable" data-tags="FutureU Social Innovation SDG Mental Health Website App 2020">
+          <td>2020</td>
+          <td>FutureU Social Innovation Program — TP.HCM</td>
+          <td><span class="mun-role role-pi">Khởi xướng</span></td>
+          <td>"Mental Health Support for Students with Website and App" — SDGs</td>
+        </tr>
+        <tr class="searchable" data-tags="AIESEC Youth For Impact Best Editor English Communication 2020">
+          <td>07/2020</td>
+          <td>AIESEC Youth For Impact Competition</td>
+          <td><span class="mun-role role-head">Best Editor</span></td>
+          <td>"Addressing the Current State of English Communication Proficiency Among Students"</td>
+        </tr>
+        <tr class="searchable" data-tags="YASMUN 2020 UNHRC Delegate Xenophobia">
+          <td>2020</td>
+          <td>YASMUN 2020</td>
+          <td><span class="mun-role role-del">Delegate</span></td>
+          <td>UNHRC · "Combatting Xenophobia and Regulating Citizen's Information"</td>
+        </tr>
+        <tr class="searchable" data-tags="YASMUN 2021 ASEAN Chair South China Sea Dispute Tourism">
+          <td>2021</td>
+          <td>YASMUN 2021</td>
+          <td><span class="mun-role role-chair">Chair</span></td>
+          <td>ASEAN Committee · "The South China Sea Dispute and Peaceful Solutions"</td>
+        </tr>
+        <tr class="searchable" data-tags="YASMUN 2022 ESCAP Chair Urbanization Green Economy Cyber Fraud">
+          <td>2022</td>
+          <td>YASMUN 2022</td>
+          <td><span class="mun-role role-chair">Chair</span></td>
+          <td>ESCAP Committee · "Urbanization Challenges & Sustainable Green Economy"</td>
+        </tr>
+        <tr class="searchable" data-tags="VYMUN 2022 UNDP Good Governance Transgender Rights">
+          <td>2022</td>
+          <td>VYMUN 2022</td>
+          <td><span class="mun-role role-del">Delegate</span></td>
+          <td>UNDP · "Promoting Good Governance & Welfare of Transgender Individuals"</td>
+        </tr>
+        <tr class="searchable" data-tags="ILUSTRACION Head Public Relations PR season project">
+          <td>2022</td>
+          <td>ILUSTRACIÓN Project</td>
+          <td><span class="mun-role role-head">Head of PR</span></td>
+          <td>Trưởng bộ phận Quan hệ Công chúng — Season 1</td>
+        </tr>
+        <tr class="searchable" data-tags="Friendship Dialogue 2022 Liaison Officer Resilience Recovery">
+          <td>12/2022</td>
+          <td>Friendship Dialogue 2022</td>
+          <td><span class="mun-role role-liaison">Liaison Officer</span></td>
+          <td>"Resilience Adaptation for Recovery and Development"</td>
+        </tr>
+        <tr class="searchable" data-tags="FTU MUN 2023 UNHRC Communist East Europe Immigration Crisis">
+          <td>2023</td>
+          <td>FTU MUN 2023</td>
+          <td><span class="mun-role role-del">Delegate</span></td>
+          <td>UNHRC · "Communist Collapse in East Europe and Immigration Crisis"</td>
+        </tr>
+        <tr class="searchable" data-tags="DYMUN 2023 Joint Historical Crisis Council Bosnian War Bosnia">
+          <td>2023</td>
+          <td>DYMUN 2023</td>
+          <td><span class="mun-role role-del">Delegate</span></td>
+          <td>Joint Historical Crisis Council · "Bosnian War"</td>
+        </tr>
+        <tr class="searchable" data-tags="VYMUN 2023 Historical Crisis Council Iraq Iran War">
+          <td>2023</td>
+          <td>VYMUN 2023</td>
+          <td><span class="mun-role role-del">Delegate</span></td>
+          <td>Historical Crisis Council · "Iraq–Iran War"</td>
+        </tr>
+        <tr class="searchable" data-tags="Ho Chi Minh City Economic Forum 2023 Liaison Green Growth Net Zero">
+          <td>09/2023</td>
+          <td>Ho Chi Minh City Economic Forum 2023</td>
+          <td><span class="mun-role role-liaison">Liaison Officer</span></td>
+          <td>"Green Growth — Towards Net Zero" · 13–17/09/2023</td>
+        </tr>
+        <tr class="searchable" data-tags="VUS Young Innovators Pacesetters Honour Roll tieng anh 2018 2019 2020">
+          <td>2018–2020</td>
+          <td>Viet Nam USA Society (VUS)</td>
+          <td><span class="mun-role role-del">Học viên ưu tú</span></td>
+          <td>Young Innovators 3–4, Young Pacesetters 1–3 · VUS Honour Roll × 3</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     SECTION: ACADEMIC SEMINARS
+     ══════════════════════════════════════════════════════ -->
+<section class="cv-section" id="sec-seminars" data-cat="sem">
+  <div class="section-header">
+    <div class="section-icon">🔬</div>
+    <h2 class="section-title">Hội Thảo Khoa Học & Học Thuật</h2>
+    <div class="section-line"></div>
+    <div class="section-count">Seminars</div>
+  </div>
+  <div class="sem-list">
+
+    <div class="sem-item searchable" data-tags="Research Skills Undergraduate Students Bruce Vu IU VNU-HCM 2024 bao cao hoc thuat">
+      <div class="sem-icon">📖</div>
+      <div class="sem-body">
+        <div class="sem-date">08/10/2024 · IU-VNUHCM</div>
+        <div class="sem-title">"Research Skills for Undergraduate Students"</div>
+        <div class="sem-desc">
+          Trình bày bởi <strong>Prof. Bruce Vu</strong>, International University VNU-HCM.<br>
+          Tham chiếu: physics.hcmiu.edu.vn/recap-buoi-noi-chuyen-ve-kinh-nghiem-viet-bao-cao-hoc-thuat/
+        </div>
+      </div>
+    </div>
+
+    <div class="sem-item searchable" data-tags="Semiconductor University of Tokyo Graduate Admissions Le Duc Anh VNU-HCM 2025 ban dan the">
+      <div class="sem-icon">⚛</div>
+      <div class="sem-body">
+        <div class="sem-date">20/09/2025 · VNU-HCM University of Science</div>
+        <div class="sem-title">"Research on Semiconductor Devices at the University of Tokyo and Graduate Admissions Program"</div>
+        <div class="sem-desc">
+          Trình bày bởi <strong>Assoc. Prof. Dr. Lê Đức Anh</strong>, ĐH Khoa học VNU-HCM.
+        </div>
+      </div>
+    </div>
+
+    <div class="sem-item searchable" data-tags="Serge Haroche Nobel quantum physics photon HCMUT vat ly luong tu 2025 giai Nobel">
+      <div class="sem-icon">🏆</div>
+      <div class="sem-body">
+        <div class="sem-date">10/10/2025 · HCMUT VNU-HCM</div>
+        <div class="sem-title">"Prof. Serge Haroche — A Giant of Quantum Physics"</div>
+        <div class="sem-desc">
+          Hội thảo tổ chức bởi <strong>Trường ĐH Bách Khoa (HCMUT)</strong> VNU-HCM.<br>
+          Nhà khoa học đoạt giải Nobel Vật lý chia sẻ về quang tử và vật lý lượng tử.<br>
+          Tham chiếu: hcmut.edu.vn/tintuc/Nha-khoa-hoc-doat-giai-Nobel-Vat-ly-chia-se-ve-quang-tu-va-vat-ly-luong-tu
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════ FOOTER ══════════════ -->
+<footer class="cv-footer">
+  <div class="footer-seal">◈ <span>ĐỖ MINH HOÀNG PHÚC</span> · CV SINGULARITY 2045 · <span>HỒ CHÍ MINH CITY</span> ◈</div>
+  <div class="footer-quantum">BioSpace · BCI · Post-Quantum · Mekong-Silicon · 2026 — 2045</div>
+  <div style="font-family:var(--font-mono);font-size:9px;color:rgba(212,175,55,0.2);margin-top:8px;">
+    36 INTERACTIONS × 6 DIMENSIONS × ∞ POSSIBILITIES
+  </div>
+</footer>
+
+</div><!-- /page-shell -->
+
+<!-- ═══════════════════════════════════════════════════════════
+     JAVASCRIPT — ALL INTERACTIONS
+     ═══════════════════════════════════════════════════════════ -->
+<script>
+/* ══════════ CURSOR ══════════ */
+const cursorMain  = document.getElementById('cursor-main');
+const cursorTrail = document.getElementById('cursor-trail');
+let mx=0, my=0, tx=0, ty=0;
+document.addEventListener('mousemove', e => {
+  mx = e.clientX; my = e.clientY;
+  cursorMain.style.left = mx+'px'; cursorMain.style.top = my+'px';
+});
+setInterval(() => {
+  tx += (mx - tx) * 0.12; ty += (my - ty) * 0.12;
+  cursorTrail.style.left = tx+'px'; cursorTrail.style.top = ty+'px';
+}, 16);
+
+/* ══════════ BACKGROUND PARTICLES ══════════ */
+(function(){
+  const canvas = document.getElementById('bg-canvas');
+  const ctx = canvas.getContext('2d');
+  let W, H, particles=[], nodes=[];
+  function resize(){ W=canvas.width=innerWidth; H=canvas.height=innerHeight; }
+  resize(); window.addEventListener('resize', resize);
+
+  // Lotus/diamond pattern overlay
+  for(let i=0;i<60;i++){
+    particles.push({
+      x: Math.random()*5000, y: Math.random()*3000,
+      vx:(Math.random()-.5)*.3, vy:(Math.random()-.5)*.3,
+      r: Math.random()*1.5+.5,
+      a: Math.random(),
+      color: Math.random()<.4 ? '#D4AF37' : Math.random()<.5 ? '#00FFD1' : '#C0392B'
+    });
+  }
+  // Neural network nodes
+  for(let i=0;i<30;i++){
+    nodes.push({
+      x: Math.random()*5000, y: Math.random()*3000,
+      vx:(Math.random()-.5)*.15, vy:(Math.random()-.5)*.15,
+    });
+  }
+  let t=0;
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    t+=.005;
+
+    // Draw connections between nodes
+    for(let i=0;i<nodes.length;i++){
+      nodes[i].x+=nodes[i].vx; nodes[i].y+=nodes[i].vy;
+      if(nodes[i].x<0||nodes[i].x>W) nodes[i].vx*=-1;
+      if(nodes[i].y<0||nodes[i].y>H) nodes[i].vy*=-1;
+      for(let j=i+1;j<nodes.length;j++){
+        const dx=nodes[i].x-nodes[j].x, dy=nodes[i].y-nodes[j].y;
+        const dist=Math.sqrt(dx*dx+dy*dy);
+        if(dist<200){
+          ctx.beginPath();
+          ctx.strokeStyle=`rgba(212,175,55,${(1-dist/200)*.08})`;
+          ctx.lineWidth=.5;
+          ctx.moveTo(nodes[i].x,nodes[i].y);
+          ctx.lineTo(nodes[j].x,nodes[j].y);
+          ctx.stroke();
+        }
+      }
+    }
+
+    // Draw particles
+    for(const p of particles){
+      p.x+=p.vx; p.y+=p.vy;
+      if(p.x<0) p.x=W; if(p.x>W) p.x=0;
+      if(p.y<0) p.y=H; if(p.y>H) p.y=0;
+      ctx.beginPath();
+      ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+      ctx.fillStyle=p.color+'33';
+      ctx.fill();
+    }
+
+    // Vietnamese pattern — subtle diamond grid
+    ctx.strokeStyle='rgba(212,175,55,0.025)';
+    ctx.lineWidth=.5;
+    const spacing=80;
+    for(let x=0;x<W+spacing;x+=spacing){
+      for(let y=0;y<H+spacing;y+=spacing){
+        ctx.save();
+        ctx.translate(x,y);
+        ctx.rotate(Math.PI/4);
+        ctx.strokeRect(-8,-8,16,16);
+        ctx.restore();
+      }
+    }
+
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+/* ══════════ SEARCH ENGINE ══════════ */
+let searchMode = 'full';
+let activeFilter = 'all';
+let searchQuery = '';
+
+function setSearchMode(mode){
+  searchMode = mode;
+  document.querySelectorAll('.search-mode-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('mode-'+mode)?.classList.add('active');
+  doSearch();
+}
+
+function filterCat(cat){
+  activeFilter = cat;
+  document.querySelectorAll('.filter-tag').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll(`.filter-tag[data-cat="${cat}"]`).forEach(b=>b.classList.add('active'));
+  doSearch();
+}
+
+document.getElementById('main-search').addEventListener('input', function(){
+  searchQuery = this.value.trim().toLowerCase();
+  doSearch();
+});
+
+function doSearch(){
+  const items = document.querySelectorAll('.searchable');
+  let count=0, total=items.length;
+  items.forEach(el => {
+    const text = (el.textContent + (el.dataset.tags||'')).toLowerCase();
+    const tags = (el.dataset.tags||'').toLowerCase();
+    const cat = el.dataset.cat || el.closest('[data-cat]')?.dataset.cat || '';
+    
+    // Category filter
+    const catMatch = activeFilter==='all' || cat===activeFilter;
+    
+    // Search match
+    let searchMatch = true;
+    if(searchQuery){
+      if(searchMode==='full') searchMatch = text.includes(searchQuery);
+      else if(searchMode==='exact') searchMatch = text.includes(searchQuery);
+      else if(searchMode==='fuzzy') searchMatch = fuzzyMatch(text, searchQuery);
+      else if(searchMode==='quantum') searchMatch = quantumSearch(text, searchQuery);
+      else if(searchMode==='year') searchMatch = text.includes(searchQuery) || (el.dataset.year||'').includes(searchQuery);
+      else if(searchMode==='role') searchMatch = tags.includes(searchQuery);
+    }
+    
+    const show = catMatch && searchMatch;
+    el.style.display = show ? '' : 'none';
+    if(show) { count++; highlightText(el, searchQuery); }
+    else removeHighlight(el);
+  });
+  
+  const countEl = document.getElementById('search-results-count');
+  if(searchQuery || activeFilter!=='all'){
+    countEl.textContent = `⟦ ${count} / ${total} kết quả phù hợp ⟧`;
+  } else {
+    countEl.textContent = '';
+  }
+}
+
+function fuzzyMatch(text, query){
+  let qi=0;
+  for(let ti=0;ti<text.length&&qi<query.length;ti++){
+    if(text[ti]===query[qi]) qi++;
+  }
+  return qi===query.length;
+}
+
+function quantumSearch(text, query){
+  // Superposition: match any permutation of words
+  const words = query.split(' ').filter(Boolean);
+  return words.some(w=>text.includes(w)) && words.every(w=>text.includes(w)||fuzzyMatch(text,w));
+}
+
+function highlightText(el, query){
+  if(!query) return;
+  removeHighlight(el);
+  // Only highlight in leaf text nodes for performance
+}
+function removeHighlight(el){}
+
+/* ══════════ TABS ══════════ */
+const tabMap = {
+  profile:    ['sec-profile'],
+  education:  ['sec-education'],
+  experience: ['sec-experience'],
+  skills:     ['sec-skills'],
+  languages:  ['sec-languages'],
+  leadership: ['sec-leadership'],
+  seminars:   ['sec-seminars'],
+  all:        ['sec-profile','sec-education','sec-experience','sec-skills','sec-languages','sec-leadership','sec-seminars']
+};
+
+function showTab(tab){
+  // Toggle nav
+  document.querySelectorAll('.nav-tab').forEach((t,i)=>{
+    t.classList.toggle('active', t.getAttribute('onclick').includes("'"+tab+"'"));
+  });
+  // Show/hide sections
+  const allSecs = ['sec-profile','sec-education','sec-experience','sec-skills','sec-languages','sec-leadership','sec-seminars'];
+  const show = tabMap[tab] || allSecs;
+  allSecs.forEach(id=>{
+    const el = document.getElementById(id);
+    if(el) el.classList.toggle('hidden', !show.includes(id));
+  });
+  // Animate skill bars when visible
+  if(['skills','all'].includes(tab)) setTimeout(animateSkillBars, 200);
+}
+
+/* ══════════ SKILL BARS ══════════ */
+function animateSkillBars(){
+  document.querySelectorAll('.skill-bar-fill').forEach(bar=>{
+    bar.style.width = bar.dataset.pct + '%';
+  });
+}
+// Auto-animate on load
+window.addEventListener('load', ()=>{ setTimeout(animateSkillBars,600); });
+
+/* ══════════ COPY UTIL ══════════ */
+function copyText(t){ navigator.clipboard?.writeText(t); showToast('Đã sao chép: '+t); }
+function showToast(msg){
+  const d=document.createElement('div');
+  Object.assign(d.style,{
+    position:'fixed',bottom:'32px',left:'50%',transform:'translateX(-50%)',
+    background:'var(--ink-panel)',border:'1px solid var(--gold-dong)',
+    color:'var(--text-gold)',fontFamily:'var(--font-mono)',fontSize:'11px',
+    padding:'8px 20px',borderRadius:'6px',zIndex:'9999',
+    animation:'fadeUp .3s ease',letterSpacing:'1px'
+  });
+  d.textContent=msg;
+  document.body.appendChild(d);
+  setTimeout(()=>d.remove(),2200);
+}
+
+/* ══════════════════════════════════════════════════════
+   36 INTERACTIONS
+   ══════════════════════════════════════════════════════ */
+let activeInteractions = new Set();
+function toggleInt(id){ 
+  const btn = document.getElementById('btn-'+id);
+  if(btn) btn.classList.toggle('active');
+}
+
+// ── D1: SPATIAL ─────────────────────────────
+let tiltEnabled=false;
+function int_3DTilt(){
+  tiltEnabled=!tiltEnabled; toggleInt(1);
+  document.querySelectorAll('.tiltable').forEach(el=>{
+    if(tiltEnabled){
+      el.addEventListener('mousemove', handleTilt);
+      el.addEventListener('mouseleave', resetTilt);
+    } else {
+      el.removeEventListener('mousemove', handleTilt);
+      el.removeEventListener('mouseleave', resetTilt);
+      el.style.transform='';
+    }
+  });
+  showToast(tiltEnabled ? '3D Tilt: BẬT' : '3D Tilt: TẮT');
+}
+function handleTilt(e){
+  const r=this.getBoundingClientRect();
+  const x=(e.clientX-r.left)/r.width-.5;
+  const y=(e.clientY-r.top)/r.height-.5;
+  this.style.transform=`perspective(600px) rotateY(${x*16}deg) rotateX(${-y*12}deg) scale(1.02)`;
+  this.style.boxShadow=`${-x*20}px ${y*20}px 40px rgba(0,0,0,.4)`;
+}
+function resetTilt(){ this.style.transform=''; this.style.boxShadow=''; }
+
+let parallaxEnabled=false;
+function int_Parallax(){
+  parallaxEnabled=!parallaxEnabled; toggleInt(2);
+  if(parallaxEnabled){
+    window.addEventListener('scroll', handleParallax);
+    showToast('Parallax: BẬT');
+  } else {
+    window.removeEventListener('scroll', handleParallax);
+    document.querySelectorAll('.cv-section').forEach(s=>s.style.transform='');
+    showToast('Parallax: TẮT');
+  }
+}
+function handleParallax(){
+  const sy=window.scrollY;
+  document.querySelectorAll('.cv-section').forEach((s,i)=>{
+    s.style.transform=`translateY(${(sy-s.offsetTop)*(i%2===0?.03:-.03)}px)`;
+  });
+}
+
+let depthEnabled=false;
+function int_Depth(){
+  depthEnabled=!depthEnabled; toggleInt(3);
+  document.querySelectorAll('.info-card,.tl-card,.skill-group').forEach((el,i)=>{
+    el.style.transition=depthEnabled?'transform .5s,opacity .5s':'';
+    el.style.transform=depthEnabled?`translateZ(${(i%3)*10}px) scale(${1+(i%3)*.01})`:'';
+    el.style.opacity=depthEnabled?`${.7+.1*(i%3)}`:'';
+  });
+  showToast(depthEnabled?'Z-Depth: BẬT':'Z-Depth: TẮT');
+}
+
+let magneticEnabled=false;
+function int_Magnetic(){
+  magneticEnabled=!magneticEnabled; toggleInt(4);
+  document.querySelectorAll('.int-btn,.contact-chip,.filter-tag').forEach(el=>{
+    if(magneticEnabled){
+      el.classList.add('magnetic');
+      el.addEventListener('mousemove', magnetMove);
+      el.addEventListener('mouseleave', magnetLeave);
+    } else {
+      el.classList.remove('magnetic');
+      el.removeEventListener('mousemove', magnetMove);
+      el.removeEventListener('mouseleave', magnetLeave);
+      el.style.transform='';
+    }
+  });
+  showToast(magneticEnabled?'Magnetic: BẬT':'Magnetic: TẮT');
+}
+function magnetMove(e){
+  const r=this.getBoundingClientRect();
+  const x=(e.clientX-r.left-r.width/2)*.3;
+  const y=(e.clientY-r.top-r.height/2)*.3;
+  this.style.transform=`translate(${x}px,${y}px)`;
+}
+function magnetLeave(){ this.style.transform=''; }
+
+let floatEnabled=false;
+function int_Float(){
+  floatEnabled=!floatEnabled; toggleInt(5);
+  document.querySelectorAll('.info-card,.lang-card').forEach((el,i)=>{
+    if(floatEnabled){
+      el.style.animation=`float${i%3} ${2+i*.3}s ease-in-out infinite`;
+      el.style.animationDelay=`${i*.15}s`;
+    } else { el.style.animation=''; }
+  });
+  if(floatEnabled && !document.getElementById('float-css')){
+    const s=document.createElement('style');
+    s.id='float-css';
+    s.textContent=`
+      @keyframes float0{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+      @keyframes float1{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+      @keyframes float2{0%,100%{transform:translateY(0)}50%{transform:translateY(-11px)}}
+    `;
+    document.head.appendChild(s);
+  }
+  showToast(floatEnabled?'Float: BẬT':'Float: TẮT');
+}
+
+function int_Gravity(){
+  toggleInt(6); showToast('Gravity Collapse ▼');
+  document.querySelectorAll('.info-card,.tl-card').forEach((el,i)=>{
+    el.style.transition='transform 1s cubic-bezier(.5,0,1,1), opacity 1s';
+    el.style.transform='translateY(30px) scale(.95)';
+    el.style.opacity='.4';
+    setTimeout(()=>{ el.style.transform=''; el.style.opacity=''; },800+i*80);
+  });
+}
+
+// ── D2: TEMPORAL ─────────────────────────────
+function int_TimeScrub(){
+  const s=document.getElementById('time-scrubber');
+  s.classList.toggle('show'); toggleInt(7);
+  showToast('Timeline Scrubber');
+}
+function scrubYear(val){
+  document.getElementById('year-display').textContent=val;
+  const yearMap={
+    '2018':['2018'],'2019':['2018','2019'],'2020':['2020'],
+    '2021':['2021'],'2022':['2022'],'2023':['2023'],
+    '2024':['2024'],'2025':['2025'],'2026':['2026'],
+  };
+  const yr=parseInt(val);
+  document.querySelectorAll('[data-year]').forEach(el=>{
+    const ey=parseInt(el.dataset.year||0);
+    el.style.opacity=ey<=yr?'1':'0.2';
+  });
+  document.getElementById('year-events').textContent=`Đang xem đến năm: ${val}`;
+}
+
+let fadeEnabled=false;
+function int_FadeReveal(){
+  fadeEnabled=!fadeEnabled; toggleInt(8);
+  if(fadeEnabled){
+    document.querySelectorAll('.cv-section').forEach((s,i)=>{
+      s.style.opacity='0'; s.style.transform='translateY(30px)';
+      s.style.transition='opacity .6s, transform .6s';
+      setTimeout(()=>{ s.style.opacity='1'; s.style.transform=''; },i*200);
+    });
+  } else {
+    document.querySelectorAll('.cv-section').forEach(s=>{ s.style.opacity=''; s.style.transform=''; });
+  }
+  showToast(fadeEnabled?'Fade Reveal: BẬT':'Reset');
+}
+
+let typewriterActive=false;
+function int_Typewriter(){
+  typewriterActive=!typewriterActive; toggleInt(9);
+  if(typewriterActive){
+    const target=document.querySelector('.profile-text');
+    const original=target.innerHTML;
+    target.dataset.original=original;
+    const text=target.textContent;
+    target.textContent='';
+    let i=0;
+    const id=setInterval(()=>{
+      if(i<text.length){ target.textContent+=text[i++]; }
+      else clearInterval(id);
+    },18);
+    target.dataset.twId=id;
+  } else {
+    const target=document.querySelector('.profile-text');
+    if(target.dataset.original) target.innerHTML=target.dataset.original;
+    clearInterval(parseInt(target.dataset.twId));
+  }
+  showToast(typewriterActive?'Typewriter: BẬT':'Typewriter: TẮT');
+}
+
+function int_Countdown(){
+  toggleInt(10);
+  const target=new Date('2045-01-01').getTime();
+  const overlay=document.createElement('div');
+  Object.assign(overlay.style,{
+    position:'fixed',top:'0',left:'0',right:'0',bottom:'0',
+    background:'rgba(0,0,0,.85)',zIndex:'8000',
+    display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',
+    fontFamily:'var(--font-display)',cursor:'pointer'
+  });
+  function update(){
+    const now=new Date().getTime();
+    const diff=target-now;
+    const d=Math.floor(diff/(1000*60*60*24));
+    const h=Math.floor((diff%(1000*60*60*24))/(1000*60*60));
+    const m=Math.floor((diff%(1000*60*60))/(1000*60));
+    const s=Math.floor((diff%(1000*60))/1000);
+    overlay.innerHTML=`
+      <div style="color:var(--text-dim);font-family:var(--font-mono);font-size:11px;letter-spacing:4px;margin-bottom:24px;">⟫ ĐẾM NGƯỢC ĐẾN SINGULARITY</div>
+      <div style="font-size:clamp(30px,8vw,80px);background:linear-gradient(135deg,var(--gold-pale),var(--gold-dong),var(--red-son));-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:4px;">${d}<span style="font-size:.4em">ngày</span> ${h}<span style="font-size:.4em">h</span> ${m}<span style="font-size:.4em">m</span> ${s}<span style="font-size:.4em">s</span></div>
+      <div style="color:var(--cyan-bci);font-family:var(--font-mono);font-size:12px;letter-spacing:3px;margin-top:20px;">SINGULARITY 2045 — BioSpace · BCI · Post-Quantum</div>
+      <div style="color:var(--text-dim);font-family:var(--font-mono);font-size:10px;margin-top:32px;">[Nhấn để đóng]</div>
+    `;
+  }
+  update();
+  const id=setInterval(update,1000);
+  overlay.onclick=()=>{ clearInterval(id); overlay.remove(); };
+  document.body.appendChild(overlay);
+}
+
+let pulseActive=false;
+function int_Pulse(){
+  pulseActive=!pulseActive; toggleInt(11);
+  document.querySelectorAll('.section-icon,.tl-dot').forEach(el=>{
+    el.style.animation=pulseActive?'pulse 1.5s ease infinite':'';
+  });
+  showToast(pulseActive?'Bio Pulse: BẬT':'Bio Pulse: TẮT');
+}
+
+function int_ChronoFilter(){
+  toggleInt(12); showToast('Chrono Filter: lọc theo thứ tự thời gian');
+  const items=[...document.querySelectorAll('[data-year]')];
+  items.sort((a,b)=>parseInt(a.dataset.year)-parseInt(b.dataset.year));
+  items.forEach((el,i)=>{ el.style.animationDelay=i*.1+'s'; el.style.animation='fadeUp .5s ease both'; });
+}
+
+// ── D3: DATA ─────────────────────────────
+function int_SkillRadar(){
+  toggleInt(13);
+  const existing=document.getElementById('skill-radar-overlay');
+  if(existing){existing.remove();return;}
+  const overlay=document.createElement('div');
+  overlay.id='skill-radar-overlay';
+  Object.assign(overlay.style,{
+    position:'fixed',inset:'0',background:'rgba(0,0,0,.9)',zIndex:'8000',
+    display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',
+    cursor:'pointer'
+  });
+  const canvas=document.createElement('canvas');
+  canvas.width=500; canvas.height=500;
+  const ctx=canvas.getContext('2d');
+  const skills=[
+    {label:'Python/Code',v:.82},{label:'Network Security',v:.7},{label:'Research',v:.88},
+    {label:'MUN/Leadership',v:.9},{label:'English',v:.8},{label:'Space Eng.',v:.57},
+    {label:'IR Analysis',v:.85},{label:'Communication',v:.83}
+  ];
+  const cx=250,cy=250,R=180,n=skills.length;
+  ctx.strokeStyle='rgba(212,175,55,0.15)';
+  for(let r=R/4;r<=R;r+=R/4){
+    ctx.beginPath();
+    for(let i=0;i<n;i++){
+      const a=i*2*Math.PI/n-Math.PI/2;
+      const x=cx+r*Math.cos(a),y=cy+r*Math.sin(a);
+      i===0?ctx.moveTo(x,y):ctx.lineTo(x,y);
+    }
+    ctx.closePath(); ctx.stroke();
+  }
+  for(let i=0;i<n;i++){
+    const a=i*2*Math.PI/n-Math.PI/2;
+    ctx.beginPath(); ctx.strokeStyle='rgba(212,175,55,0.2)';
+    ctx.moveTo(cx,cy); ctx.lineTo(cx+R*Math.cos(a),cy+R*Math.sin(a)); ctx.stroke();
+    ctx.fillStyle='#E8E0D0'; ctx.font='11px Rajdhani,sans-serif'; ctx.textAlign='center';
+    ctx.fillText(skills[i].label, cx+(R+22)*Math.cos(a), cy+(R+22)*Math.sin(a)+4);
+  }
+  ctx.beginPath(); ctx.strokeStyle='rgba(0,255,209,0.8)'; ctx.lineWidth=2;
+  ctx.fillStyle='rgba(0,255,209,0.12)';
+  skills.forEach((s,i)=>{
+    const a=i*2*Math.PI/n-Math.PI/2;
+    const x=cx+R*s.v*Math.cos(a),y=cy+R*s.v*Math.sin(a);
+    i===0?ctx.moveTo(x,y):ctx.lineTo(x,y);
+  });
+  ctx.closePath(); ctx.fill(); ctx.stroke();
+  skills.forEach((s,i)=>{
+    const a=i*2*Math.PI/n-Math.PI/2;
+    ctx.beginPath(); ctx.arc(cx+R*s.v*Math.cos(a),cy+R*s.v*Math.sin(a),5,0,Math.PI*2);
+    ctx.fillStyle='var(--cyan-bci)'; ctx.fill();
+  });
+  const label=document.createElement('div');
+  Object.assign(label.style,{color:'var(--gold-dong)',fontFamily:'monospace',fontSize:'11px',letterSpacing:'3px',marginBottom:'16px',textTransform:'uppercase'});
+  label.textContent='⟫ SKILL RADAR — Nhấn để đóng';
+  overlay.appendChild(label); overlay.appendChild(canvas);
+  overlay.onclick=()=>overlay.remove();
+  document.body.appendChild(overlay);
+}
+
+function int_TagCloud(){
+  toggleInt(14);
+  const existing=document.getElementById('tagcloud-overlay');
+  if(existing){existing.remove();return;}
+  const tags=['Python','Django','Space Engineering','BCI','Post-Quantum','Network Security','MUN Chair','IELTS 7.0','Research','International Relations','Earth Observation','Cybersecurity','Pandas','Bootstrap','Web Scraping','Soft Power','SDGs','Vietnam','VNU-HCM','HUFLIT','Singularity 2045'];
+  const sizes=[22,16,14,20,18,14,18,16,18,20,14,16,14,12,12,14,12,16,14,14,20];
+  const colors=['var(--cyan-bci)','var(--gold-dong)','var(--red-son)','#7EC8FF','var(--purple-neural)','#58D68D'];
+  const overlay=document.createElement('div');
+  overlay.id='tagcloud-overlay';
+  Object.assign(overlay.style,{
+    position:'fixed',inset:'0',background:'rgba(0,0,0,.88)',zIndex:'8000',
+    display:'flex',flexWrap:'wrap',gap:'16px',padding:'60px',
+    alignItems:'center',justifyContent:'center',cursor:'pointer'
+  });
+  tags.forEach((t,i)=>{
+    const span=document.createElement('span');
+    span.textContent=t; 
+    Object.assign(span.style,{
+      fontSize:sizes[i]+'px', color:colors[i%colors.length],
+      fontFamily:'Rajdhani,sans-serif', letterSpacing:'1px',
+      opacity: Math.random()*.4+.6,
+      transform:`rotate(${(Math.random()-.5)*10}deg)`,
+      display:'inline-block', cursor:'pointer', transition:'all .2s'
+    });
+    span.onmouseover=()=>{span.style.opacity='1';span.style.transform='scale(1.2) rotate(0deg)';};
+    span.onmouseleave=()=>{span.style.opacity=Math.random()*.4+.6+'';span.style.transform=`rotate(${(Math.random()-.5)*10}deg)`;};
+    span.onclick=e=>{ e.stopPropagation(); document.getElementById('main-search').value=t; searchQuery=t.toLowerCase(); doSearch(); overlay.remove(); };
+    overlay.appendChild(span);
+  });
+  const hint=document.createElement('div');
+  Object.assign(hint.style,{
+    position:'absolute',bottom:'24px',left:'50%',transform:'translateX(-50%)',
+    color:'var(--text-dim)',fontFamily:'monospace',fontSize:'10px',letterSpacing:'2px'
+  });
+  hint.textContent='[Nhấn tag để tìm kiếm · Nhấn nền để đóng]';
+  overlay.appendChild(hint);
+  overlay.onclick=()=>overlay.remove();
+  document.body.appendChild(overlay);
+}
+
+function int_Sort(){
+  toggleInt(15);
+  const tbody=document.getElementById('mun-tbody');
+  if(!tbody) return;
+  const rows=[...tbody.querySelectorAll('tr')];
+  rows.sort((a,b)=>a.cells[0].textContent.localeCompare(b.cells[0].textContent));
+  rows.forEach(r=>tbody.appendChild(r));
+  showToast('Đã sắp xếp MUN theo năm tăng dần');
+}
+
+function int_Compare(){
+  toggleInt(16);
+  const cards=document.querySelectorAll('.info-card');
+  cards.forEach((c,i)=>{
+    if(i%2===0){ c.style.borderColor='var(--cyan-bci)'; c.style.boxShadow='0 0 20px rgba(0,255,209,.15)'; }
+    else { c.style.borderColor='var(--red-son)'; c.style.boxShadow='0 0 20px rgba(192,57,43,.15)'; }
+    setTimeout(()=>{ c.style.borderColor=''; c.style.boxShadow=''; },3000);
+  });
+  showToast('Compare Mode — Đang so sánh các thẻ');
+}
+
+function int_Stats(){
+  toggleInt(17);
+  const existing=document.getElementById('stats-overlay');
+  if(existing){existing.remove();return;}
+  const overlay=document.createElement('div');
+  overlay.id='stats-overlay';
+  Object.assign(overlay.style,{
+    position:'fixed',inset:'0',background:'rgba(0,0,0,.9)',zIndex:'8000',
+    display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',
+    fontFamily:'monospace',cursor:'pointer',padding:'24px'
+  });
+  const stats=[
+    {label:'Số chứng chỉ kỹ thuật',val:'5'},
+    {label:'MUN đã tham gia',val:'8'},
+    {label:'Năm kinh nghiệm học thuật',val:'5'},
+    {label:'Hội thảo khoa học',val:'3'},
+    {label:'Điểm IELTS tối đa (Listening)',val:'8.0'},
+    {label:'CGPA cao nhất',val:'3.61'},
+    {label:'Số ngôn ngữ làm việc',val:'2'},
+    {label:'Hoạt động lãnh đạo/XH',val:'13+'},
+  ];
+  overlay.innerHTML=`
+    <div style="color:var(--gold-dong);letter-spacing:3px;font-size:12px;margin-bottom:28px;text-transform:uppercase;">⟫ THỐNG KÊ PROFILE — Nhấn để đóng</div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:700px;">
+      ${stats.map(s=>`
+        <div style="background:var(--ink-panel);border:1px solid var(--ink-border);border-radius:8px;padding:16px;text-align:center;">
+          <div style="font-size:30px;color:var(--cyan-bci);font-family:'Cinzel Decorative',serif;">${s.val}</div>
+          <div style="font-size:10px;color:var(--text-dim);margin-top:6px;letter-spacing:1px;">${s.label}</div>
+        </div>`).join('')}
+    </div>
+  `;
+  overlay.onclick=()=>overlay.remove();
+  document.body.appendChild(overlay);
+}
+
+function int_Export(){
+  toggleInt(18);
+  const data={
+    name:'Đỗ Minh Hoàng Phúc',
+    contact:{email:'hgphuc161203vn.work@gmail.com',phone:['0767883859','0348327640'],location:'Ho Chi Minh City, Vietnam'},
+    education:[{institution:'IU-VNUHCM',major:'Space Engineering',period:'2024-2029',cgpa:2.35},{institution:'HUFLIT',major:'International Relations',period:'2021-2024',cgpa:3.61}],
+    certifications:5,mun_events:8,ielts:'7.0 (L:8.0, R:7.5)',languages:['Vietnamese (Native)','English (IELTS 7.0)']
+  };
+  const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a'); a.href=url; a.download='do_minh_hoang_phuc_cv_data.json';
+  a.click(); URL.revokeObjectURL(url);
+  showToast('Đã xuất dữ liệu JSON');
+}
+
+// ── D4: NEURAL/BCI ─────────────────────────────
+let bciAnimId=null;
+function int_BrainViz(){
+  const viz=document.getElementById('bci-viz');
+  viz.classList.toggle('show'); toggleInt(19);
+  if(viz.classList.contains('show')) startBCIViz();
+  else if(bciAnimId){ cancelAnimationFrame(bciAnimId); bciAnimId=null; }
+}
+function startBCIViz(){
+  const canvas=document.getElementById('bci-canvas');
+  canvas.width=Math.min(600,window.innerWidth-80);
+  const ctx=canvas.getContext('2d');
+  let t=0;
+  function frame(){
+    ctx.clearRect(0,0,canvas.width,200);
+    ctx.strokeStyle='rgba(155,89,182,0.6)'; ctx.lineWidth=1.5;
+    // EEG-like wave
+    ctx.beginPath();
+    for(let x=0;x<canvas.width;x++){
+      const y=100+
+        Math.sin(x*.04+t)*18+
+        Math.sin(x*.1+t*1.3)*8+
+        Math.sin(x*.025+t*.7)*25+
+        (Math.random()-.5)*3;
+      x===0?ctx.moveTo(x,y):ctx.lineTo(x,y);
+    }
+    ctx.stroke();
+    // Neural spikes
+    ctx.strokeStyle='rgba(0,255,209,0.8)'; ctx.lineWidth=1;
+    ctx.beginPath();
+    for(let x=0;x<canvas.width;x++){
+      const spike=Math.sin(x*.2+t*3)>0.95?60:0;
+      const y=100+Math.sin(x*.08+t*2)*5-spike;
+      x===0?ctx.moveTo(x,y):ctx.lineTo(x,y);
+    }
+    ctx.stroke();
+    t+=.04;
+    bciAnimId=requestAnimationFrame(frame);
+  }
+  frame();
+}
+
+let neuralNetActive=false;
+let neuralId=null;
+function int_NeuralNet(){
+  neuralNetActive=!neuralNetActive; toggleInt(20);
+  const existing=document.getElementById('neural-canvas-overlay');
+  if(!neuralNetActive){ if(existing) existing.remove(); return; }
+  const overlay=document.createElement('canvas');
+  overlay.id='neural-canvas-overlay';
+  Object.assign(overlay.style,{
+    position:'fixed',inset:'0',width:'100%',height:'100%',
+    zIndex:'3000',pointerEvents:'none'
+  });
+  overlay.width=window.innerWidth; overlay.height=window.innerHeight;
+  document.body.appendChild(overlay);
+  const ctx=overlay.getContext('2d');
+  const nodeCount=20;
+  const nodes=Array.from({length:nodeCount},(_,i)=>({
+    x:Math.random()*overlay.width,y:Math.random()*overlay.height,
+    vx:(Math.random()-.5)*.8,vy:(Math.random()-.5)*.8,a:Math.random()
+  }));
+  let t=0;
+  function frame(){
+    ctx.clearRect(0,0,overlay.width,overlay.height);
+    nodes.forEach(n=>{
+      n.x+=n.vx; n.y+=n.vy;
+      if(n.x<0||n.x>overlay.width)n.vx*=-1;
+      if(n.y<0||n.y>overlay.height)n.vy*=-1;
+      n.a=.5+.5*Math.sin(t+n.x);
+      // draw node
+      ctx.beginPath();
+      ctx.arc(n.x,n.y,3,0,Math.PI*2);
+      ctx.fillStyle=`rgba(155,89,182,${n.a})`;
+      ctx.fill();
+    });
+    nodes.forEach((a,i)=>nodes.forEach((b,j)=>{
+      if(j<=i)return;
+      const dx=a.x-b.x,dy=a.y-b.y,d=Math.sqrt(dx*dx+dy*dy);
+      if(d<180){
+        ctx.beginPath();
+        ctx.strokeStyle=`rgba(155,89,182,${(1-d/180)*.25*Math.sin(t+i)})`;
+        ctx.lineWidth=.5;
+        ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();
+      }
+    }));
+    t+=.02;
+    if(neuralNetActive) neuralId=requestAnimationFrame(frame);
+  }
+  frame();
+}
+
+function int_Synapse(){
+  toggleInt(21);
+  document.addEventListener('click', synapseEffect, {once:false});
+  showToast('Synapse Click: BẬT — nhấn bất kỳ đâu');
+}
+function synapseEffect(e){
+  for(let i=0;i<8;i++){
+    const dot=document.createElement('div');
+    const angle=Math.random()*Math.PI*2;
+    const dist=40+Math.random()*60;
+    Object.assign(dot.style,{
+      position:'fixed',left:e.clientX+'px',top:e.clientY+'px',
+      width:'4px',height:'4px',borderRadius:'50%',
+      background:['#00FFD1','#9B59B6','#D4AF37'][Math.floor(Math.random()*3)],
+      zIndex:'9990',pointerEvents:'none',
+      transition:`transform ${.4+Math.random()*.4}s ease-out, opacity .6s`
+    });
+    document.body.appendChild(dot);
+    requestAnimationFrame(()=>{
+      dot.style.transform=`translate(${Math.cos(angle)*dist}px,${Math.sin(angle)*dist}px)`;
+      dot.style.opacity='0';
+    });
+    setTimeout(()=>dot.remove(),700);
+  }
+}
+
+function int_EEG(){
+  toggleInt(22); int_BrainViz(); // Reuse BCI
+  showToast('EEG Pattern → BCI Visualizer');
+}
+
+function int_Coherence(){
+  toggleInt(23);
+  const meter=document.createElement('div');
+  Object.assign(meter.style,{
+    position:'fixed',top:'20px',right:'20px',zIndex:'9000',
+    background:'var(--ink-panel)',border:'1px solid rgba(155,89,182,.4)',
+    borderRadius:'8px',padding:'12px 16px',fontFamily:'monospace',fontSize:'11px',
+    color:'var(--purple-neural)',letterSpacing:'2px',minWidth:'180px'
+  });
+  let coh=100;
+  meter.id='coherence-meter';
+  const existing=document.getElementById('coherence-meter');
+  if(existing){existing.remove();return;}
+  const id=setInterval(()=>{
+    coh=85+Math.random()*15;
+    meter.innerHTML=`⟴ BCI COHERENCE<br><span style="font-size:22px;color:var(--cyan-bci)">${coh.toFixed(1)}%</span><br><span style="color:var(--text-dim);font-size:9px;">QUANTUM ENTANGLED</span>`;
+  },800);
+  meter.onclick=()=>{clearInterval(id);meter.remove();};
+  document.body.appendChild(meter);
+}
+
+function int_Projection(){
+  toggleInt(24);
+  const quotes=[
+    'BioSpace Quantum Sensor — Cảm biến lượng tử sinh học vũ trụ',
+    'Mekong-Silicon Nexus — Kết nối Mê Kông với Thung lũng Silicon',
+    'Singularity 2045 — Điểm kỳ dị nhận thức toàn nhân loại',
+    'Post-Quantum BCI — Giao diện não-máy tính hậu lượng tử',
+    'Vietnam National Development — Tầm nhìn phát triển 2045–2100'
+  ];
+  let qi=0;
+  const overlay=document.createElement('div');
+  Object.assign(overlay.style,{
+    position:'fixed',bottom:'80px',left:'50%',transform:'translateX(-50%)',
+    background:'rgba(0,0,0,.8)',border:'1px solid rgba(0,255,209,.3)',
+    borderRadius:'8px',padding:'16px 28px',zIndex:'8500',
+    fontFamily:"'Noto Serif Display',serif",fontSize:'14px',color:'var(--cyan-bci)',
+    letterSpacing:'1px',maxWidth:'600px',textAlign:'center',
+    transition:'opacity .4s',cursor:'pointer'
+  });
+  overlay.id='thought-projection';
+  const existing=document.getElementById('thought-projection');
+  if(existing){existing.remove();return;}
+  function cycle(){
+    overlay.style.opacity='0';
+    setTimeout(()=>{ overlay.textContent=quotes[qi%quotes.length]; qi++; overlay.style.opacity='1'; },400);
+  }
+  cycle();
+  const id=setInterval(cycle,3000);
+  overlay.onclick=()=>{clearInterval(id);overlay.remove();};
+  document.body.appendChild(overlay);
+}
+
+// ── D5: QUANTUM ─────────────────────────────
+let superActive=false;
+function int_Superposition(){
+  superActive=!superActive; toggleInt(25);
+  document.querySelectorAll('.cv-section').forEach(s=>{
+    if(superActive){
+      s.style.filter='blur(1px)'; s.style.opacity='.7';
+      setTimeout(()=>{ s.style.filter=''; s.style.opacity=''; },1200);
+    }
+  });
+  showToast(superActive?'Superposition: Tất cả trạng thái đồng thời':'Wave Collapsed');
+}
+
+function int_Entangle(){
+  toggleInt(26);
+  const cards=document.querySelectorAll('.info-card');
+  cards.forEach((c,i)=>{
+    const partner=cards[(i+1)%cards.length];
+    const c1=c.getBoundingClientRect();
+    const c2=partner.getBoundingClientRect();
+    const line=document.createElementNS('http://www.w3.org/2000/svg','svg');
+    line.style.cssText='position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:8000;';
+    const path=document.createElementNS('http://www.w3.org/2000/svg','line');
+    path.setAttribute('x1',c1.left+c1.width/2);
+    path.setAttribute('y1',c1.top+c1.height/2);
+    path.setAttribute('x2',c2.left+c2.width/2);
+    path.setAttribute('y2',c2.top+c2.height/2);
+    path.setAttribute('stroke','rgba(0,128,255,0.4)');
+    path.setAttribute('stroke-width','1');
+    path.setAttribute('stroke-dasharray','4,4');
+    line.appendChild(path); document.body.appendChild(line);
+    setTimeout(()=>line.remove(),2000);
+  });
+  showToast('Quantum Entanglement: Kết nối lượng tử');
+}
+
+function int_Collapse(){
+  toggleInt(27);
+  document.querySelectorAll('.cv-section').forEach((s,i)=>{
+    s.style.transition='transform .6s, opacity .6s';
+    s.style.opacity='0'; s.style.transform='scale(.92)';
+    setTimeout(()=>{ s.style.opacity='1'; s.style.transform=''; },300+i*100);
+  });
+  showToast('Wave Function Collapse');
+}
+
+function int_Tunnel(){
+  toggleInt(28);
+  document.body.style.perspective='800px';
+  document.querySelector('.page-shell').style.transform='rotateX(3deg)';
+  setTimeout(()=>{
+    document.querySelector('.page-shell').style.transform='';
+    document.body.style.perspective='';
+  },2000);
+  showToast('Quantum Tunneling Effect');
+}
+
+let quantumVizOn=false;
+let qvId=null;
+function int_QuantumViz(){
+  const viz=document.getElementById('quantum-viz');
+  quantumVizOn=!quantumVizOn;
+  viz.classList.toggle('show',quantumVizOn); toggleInt(29);
+  if(quantumVizOn) startQuantumViz();
+  else if(qvId){ cancelAnimationFrame(qvId); qvId=null; }
+}
+function startQuantumViz(){
+  const canvas=document.getElementById('quantum-canvas');
+  canvas.width=Math.min(600,window.innerWidth-80);
+  const ctx=canvas.getContext('2d');
+  let t=0;
+  function frame(){
+    ctx.clearRect(0,0,canvas.width,200);
+    // Wave function
+    for(let w=0;w<3;w++){
+      ctx.beginPath(); ctx.lineWidth=1.5;
+      ctx.strokeStyle=['rgba(0,128,255,0.7)','rgba(0,255,209,0.5)','rgba(212,175,55,0.4)'][w];
+      for(let x=0;x<canvas.width;x++){
+        const y=100+Math.sin(x*.02*(w+1)+t*(w+1))*30*Math.exp(-Math.pow((x-canvas.width/2)/(canvas.width*.3),2));
+        x===0?ctx.moveTo(x,y):ctx.lineTo(x,y);
+      }
+      ctx.stroke();
+    }
+    // Probability density
+    ctx.fillStyle='rgba(0,128,255,0.05)';
+    ctx.beginPath(); ctx.moveTo(0,200);
+    for(let x=0;x<canvas.width;x++){
+      const prob=Math.pow(Math.cos(x*.02+t),2)*60;
+      x===0?ctx.lineTo(x,200-prob):ctx.lineTo(x,200-prob);
+    }
+    ctx.lineTo(canvas.width,200); ctx.closePath(); ctx.fill();
+    t+=.04; qvId=requestAnimationFrame(frame);
+  }
+  frame();
+}
+
+function int_Decohere(){
+  toggleInt(30);
+  const style=document.createElement('style');
+  style.id='decohere-style';
+  const existing=document.getElementById('decohere-style');
+  if(existing){existing.remove();document.querySelectorAll('.cv-section').forEach(s=>s.style.filter='');return;}
+  style.textContent=`.cv-section{filter:blur(0);animation:decohere 4s ease forwards;}@keyframes decohere{0%{filter:blur(4px);opacity:.3}60%{filter:blur(1px);opacity:.7}100%{filter:blur(0);opacity:1}}`;
+  document.head.appendChild(style);
+  setTimeout(()=>{document.querySelectorAll('.cv-section').forEach(s=>s.style.animation='');},4000);
+  showToast('Quantum Decoherence → Classical State');
+}
+
+// ── D6: CULTURAL ─────────────────────────────
+function int_Lotus(){
+  toggleInt(31);
+  const overlay=document.getElementById('lotus-overlay');
+  overlay.classList.add('show');
+  setTimeout(()=>overlay.classList.remove('show'),1500);
+  showToast('🌸 Hoa Sen Nở');
+}
+
+function int_Dragon(){
+  toggleInt(32);
+  const chars='龍竜ドラゴン용ड्रैगनRồngRẮNRAU RỒNG';
+  const overlay=document.createElement('div');
+  Object.assign(overlay.style,{
+    position:'fixed',inset:'0',zIndex:'9000',
+    background:'rgba(0,0,0,.85)',display:'flex',flexWrap:'wrap',
+    alignItems:'center',justifyContent:'center',gap:'8px',
+    cursor:'pointer',padding:'40px'
+  });
+  for(let i=0;i<80;i++){
+    const span=document.createElement('span');
+    span.textContent=chars[Math.floor(Math.random()*chars.length)];
+    Object.assign(span.style,{
+      color:`rgba(${Math.random()<.5?'212,175,55':'192,57,43'},${Math.random()*.8+.2})`,
+      fontSize:Math.random()*30+16+'px',
+      fontFamily:"'Cinzel Decorative',serif",
+      transform:`rotate(${(Math.random()-.5)*30}deg)`,
+      display:'inline-block',
+      animation:`pulse ${1+Math.random()*2}s ease infinite`
+    });
+    overlay.appendChild(span);
+  }
+  const label=document.createElement('div');
+  Object.assign(label.style,{position:'absolute',bottom:'24px',left:'50%',transform:'translateX(-50%)',color:'var(--gold-dong)',fontFamily:'monospace',fontSize:'11px',letterSpacing:'3px'});
+  label.textContent='RỒNG VIỆT NAM · DRAGON SCROLL · Nhấn để đóng';
+  overlay.appendChild(label);
+  overlay.onclick=()=>overlay.remove();
+  document.body.appendChild(overlay);
+}
+
+function int_InkBrush(){
+  toggleInt(33);
+  document.querySelectorAll('.section-title,.cv-name').forEach((el,i)=>{
+    el.style.transition='all .5s';
+    el.style.filter='blur(2px)';
+    setTimeout(()=>el.style.filter='',600+i*200);
+  });
+  showToast('🖌 Ink Brush Reveal');
+}
+
+function int_Singularity(){
+  const bar=document.getElementById('sing-bar');
+  bar.classList.toggle('show'); toggleInt(34);
+  if(bar.classList.contains('show')){
+    const now=2026, target=2045, start=2021;
+    const pct=((now-start)/(target-start))*100;
+    setTimeout(()=>document.getElementById('sing-fill').style.width=pct+'%',100);
+  }
+}
+
+let matrixOn=false;
+let matrixId=null;
+function int_Matrix(){
+  matrixOn=!matrixOn; toggleInt(35);
+  const canvas=document.getElementById('matrix-overlay');
+  canvas.classList.toggle('show',matrixOn);
+  if(matrixOn){
+    canvas.width=window.innerWidth; canvas.height=window.innerHeight;
+    const ctx=canvas.getContext('2d');
+    const cols=Math.floor(canvas.width/14);
+    const drops=Array(cols).fill(1);
+    const chars='アイウエオカキクケコサシスセソタチツテトナニヌネノ01Ψ∑∞⊕◈龍RỒNG2045BCI';
+    function frame(){
+      ctx.fillStyle='rgba(10,10,15,.08)';
+      ctx.fillRect(0,0,canvas.width,canvas.height);
+      ctx.fillStyle='rgba(212,175,55,0.7)'; ctx.font='13px monospace';
+      drops.forEach((y,i)=>{
+        const c=chars[Math.floor(Math.random()*chars.length)];
+        ctx.fillStyle=Math.random()<.05?'rgba(0,255,209,0.9)':'rgba(192,57,43,0.6)';
+        ctx.fillText(c,i*14,y*14);
+        if(y*14>canvas.height&&Math.random()>.97) drops[i]=0;
+        drops[i]++;
+      });
+      if(matrixOn) matrixId=requestAnimationFrame(frame);
+    }
+    frame();
+  } else {
+    const ctx=canvas.getContext('2d');
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    if(matrixId){ cancelAnimationFrame(matrixId); matrixId=null; }
+  }
+  showToast(matrixOn?'Matrix: BẬT — Rồng & Lượng tử':'Matrix: TẮT');
+}
+
+let phosphorOn=false;
+function int_Phosphor(){
+  phosphorOn=!phosphorOn; toggleInt(36);
+  document.body.classList.toggle('phosphor-mode',phosphorOn);
+  showToast(phosphorOn?'Phosphor CRT Mode: BẬT':'Phosphor: TẮT');
+}
+
+/* ══════════ INIT ══════════ */
+window.addEventListener('DOMContentLoaded',()=>{
+  // Animate sections in on load
+  document.querySelectorAll('.cv-section').forEach((s,i)=>{
+    s.style.opacity='0'; s.style.transform='translateY(24px)';
+    setTimeout(()=>{
+      s.style.transition='opacity .7s ease, transform .7s ease';
+      s.style.opacity='1'; s.style.transform='';
+    }, 400+i*120);
+  });
+  setTimeout(animateSkillBars, 1200);
+  
+  // Set initial filter tag
+  document.querySelector('.filter-tag[data-cat="all"]').classList.add('active');
+});
+</script>
+</body>
+</html>
